@@ -36,6 +36,10 @@
     </div>
     <img class="main-pic" src="img/main.jpg">
     <div class="main-back"></div> 
+    <div class="fade-menu"><div class="top-menu"></div>
+    <img src="img/fade1.jpg">
+    <div class="fade-txt"><p>heeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p></div>
+    </div>
 
 </body>
 </html>

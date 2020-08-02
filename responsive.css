@@ -1,3 +1,9 @@
+@media(max-width:900px) {
+    .fade-menu img {
+        width: 70%;
+    }
+}
+
 @media(max-width:700px) {
     .li li {
         display: none;
@@ -11,23 +17,20 @@
     #light {
         margin-left: -20px;
     }
-}
-
-
-/*@media(max-width:650px) {
-    .res-menu {
-        margin-left: 380px;
+    .fade-menu img {
+        width: 60%;
     }
 }
 
 @media(max-width:600px) {
-    .res-menu {
-        margin-left: 350px;
+    .fade-menu img {
+        width: 50%;
+        margin-left: 100px;
     }
 }
 
 @media(max-width:500px) {
-    .res-menu {
-        margin-left: 180px;
+    .fade-menu img {
+        margin-left: 80px;
     }
 }
