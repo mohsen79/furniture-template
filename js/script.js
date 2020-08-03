@@ -100,5 +100,35 @@ $(document).ready(function() {
 
     });
 
+    //fade-menu
+    $(".sel").hide();
+    $(".sel:first").show();
+    $(".fade-menu-li a:first").addClass("select");
+    $(".fade-menu-li a").click(function() {
+        $(".sel").hide();
+        $(".fade-menu-li a").removeClass("select");
+        $(this).addClass("select");
+        var sel = $(this).attr('href');
+        $(sel).fadeToggle(1000);
+        return false;
+    });
 
+    //slider
+    $(".next").click(function() {
+        $(".slide").animate({
+            left: '0%'
+        }, 1000, function() {
+            $(".slide").css('left', '-100%');
+            $("img-box").first().before($(".img-box").last());
+        });
+    });
+
+    $(".prev").click(function() {
+        $(".slide").animate({
+            left: '-200%'
+        }, 1000, function() {
+            $(".slide").css('left', '-100%');
+            $("img-box").last().after($(".img-box").first());
+        });
+    });
 });

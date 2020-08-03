@@ -21,6 +21,7 @@
             <a href="main.php"><li>home</li></a>
             <a href="contact.php"><li>contact us</li></a>
         </ul>
+        <div class="log"><a href="login.php">sign in/up</a></div>
         <i class="fas fa-lightbulb" id="light" data="off"></i><i class="fa fa-search" id="search-icon" data="close"></i>
         <i class="fas fa-bars" id="bars" data="close"></i>
     <div class="menu"></div> 
@@ -36,10 +37,35 @@
     </div>
     <img class="main-pic" src="img/main.jpg">
     <div class="main-back"></div> 
-    <div class="fade-menu"><div class="top-menu"></div>
-    <img src="img/fade1.jpg">
-    <div class="fade-txt"><p>heeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p></div>
+    <div class="fade-menu"><div class="top-menu">
+        <ul class="fade-menu-li">
+            <li><a href="#steel">steel furniture</a></li>
+            <li><a href="#comfortable">comfortable furniture</a></li>
+        </ul>
     </div>
+    <div class="sel" id="steel">
+    <div><img src="img/fade2.jpg"></div>
+    <div><div class="fade-txt"><p class="p">steel market</p></div></div>
+    </div>
+    <div class="sel" id="comfortable">
+    <div><img src="img/fade1.jpg"></div>
+    <div><div class="fade-txt"><p class="p">comfortable market</p></div></div>
+    </div>
+    </div>
+    <div class="slide-all">
+    <div class="slide-box">
+        <div class="slide">
+            <div class="img-box">
+                <img src="img/slide1.jpg">
+                <img src="img/slide2.jpg">
+                <img src="img/slide3.jpg">
+                <img src="img/slide4.jpg">
+            </div>
+        </div>
+    </div>
+    <div class="next"></div><div class="prev"></div>
+    </div>
+
 
 </body>
 </html>
