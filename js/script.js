@@ -114,21 +114,22 @@ $(document).ready(function() {
     });
 
     //slider
+    var slide = $(".slide");
     $(".next").click(function() {
-        $(".slide").animate({
+        slide.animate({
             left: '0%'
-        }, 1000, function() {
-            $(".slide").css('left', '-100%');
-            $("img-box").first().before($(".img-box").last());
+        }, 500, function() {
+            slide.css('left', '-100%');
+            $(".img-box").first().before($(".img-box").last());
         });
     });
 
     $(".prev").click(function() {
-        $(".slide").animate({
+        slide.animate({
             left: '-200%'
-        }, 1000, function() {
-            $(".slide").css('left', '-100%');
-            $("img-box").last().after($(".img-box").first());
+        }, 500, function() {
+            slide.css('left', '-100%');
+            $(".img-box").last().after($(".img-box").first());
         });
     });
 });

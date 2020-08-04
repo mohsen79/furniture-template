@@ -278,58 +278,62 @@ a {
 
 .slide-all {
     height: 80vh;
-    margin: 30px 80px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
-    position: relative;
 }
 
 .slide-box {
-    max-width: 100%;
-    width: 1100px;
-    position: absolute;
-    height: 100%;
+    width: 1224px;
+    height: 550px;
     overflow: hidden;
 }
 
 .slide {
-    width: 400%;
+    width: 500%;
     height: 100%;
     position: relative;
     left: -100%;
 }
 
 .img-box {
-    width: calc(100%4);
+    width: calc(100%/5);
     height: 100%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
 }
 
 .img-box img {
-    max-width: 25%;
-    width: 1200px;
+    width: 100%;
     height: 100%;
 }
 
+.next,
+.prev {
+    z-index: 3;
+}
+
 .next {
-    width: 15px;
-    height: 15px;
     border-top: 2px solid red;
     border-right: 2px solid red;
-    position: relative;
-    margin: -45%;
+    position: absolute;
+    padding: 1.5%;
+    float: right;
+    right: 8%;
     transform: rotate(45deg);
     cursor: pointer;
 }
 
 .prev {
-    width: 15px;
-    height: 15px;
     border-top: 2px solid red;
     border-left: 2px solid red;
-    position: relative;
-    margin: -45%;
+    position: absolute;
+    padding: 1.5%;
+    float: left;
+    left: 8%;
     transform: rotate(-45deg);
     cursor: pointer;
 }

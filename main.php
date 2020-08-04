@@ -55,12 +55,10 @@
     <div class="slide-all">
     <div class="slide-box">
         <div class="slide">
-            <div class="img-box">
-                <img src="img/slide1.jpg">
-                <img src="img/slide2.jpg">
-                <img src="img/slide3.jpg">
-                <img src="img/slide4.jpg">
-            </div>
+            <div class="img-box"><img src="img/slide1.jpg"></div>
+            <div class="img-box"><img src="img/slide2.jpg"></div>
+            <div class="img-box"><img src="img/slide3.jpg"></div>
+            <div class="img-box"><img src="img/slide4.jpg"></div>
         </div>
     </div>
     <div class="next"></div><div class="prev"></div>
