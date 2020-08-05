@@ -18,12 +18,17 @@
 
 /*MENU*/
 
+.all-search-menu {
+    width: 100%;
+    position: relative;
+    z-index: 4;
+}
+
 .menu {
     width: 100%;
     height: 46px;
-    background: rgba(14, 3, 3, 0.774);
+    background: rgba(14, 3, 3, 0.884);
     position: relative;
-    margin-top: -21px;
 }
 
 .search-back {
@@ -336,4 +341,45 @@ a {
     left: 8%;
     transform: rotate(-45deg);
     cursor: pointer;
+}
+
+.menu-time {
+    width: 100%;
+    min-height: 1500px;
+    background: rgba(37, 37, 37, 0.178);
+}
+
+.menu-time li {
+    float: right;
+    max-width: 30%;
+    width: 500px;
+    height: 300px;
+    margin: 80px 110px;
+    position: relative;
+    /* transform: translateX(-400px); */
+    transition: all ease 1s;
+}
+
+.menu-time img {
+    max-width: 90%;
+    width: 500px;
+    height: 300px;
+    opacity: 0.5;
+    border-radius: 5px;
+}
+
+.menu-time img:hover {
+    opacity: 1;
+    transition: all ease 1s;
+    transform: scale(1.2);
+}
+
+body:hover .menu-time img {
+    transition: all ease 1s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all ease 1s;
 }
