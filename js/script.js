@@ -154,11 +154,11 @@ $(document).ready(function() {
     //pic slide
     $(window).scroll(function() {
         var scroll = $(this).scrollTop();
-        if (scroll > $(".menu-time2").offset().top - 50) {
-            $(".menu-time li").each(function(i) {
+        if (scroll > $(".menu-time").offset().top - 50) {
+            $(".menu-time2").each(function(i) {
                 setTimeout(function() {
-                    $(".menu-time li").eq(i).addClass("show");
-                }, 500 * (i + 1));
+                    $(".menu-time2").eq(i).addClass("show");
+                }, 300 * (i + 1));
             });
         }
     });

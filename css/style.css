@@ -344,20 +344,22 @@ a {
 }
 
 .menu-time {
+    margin-top: 50px;
     width: 100%;
-    min-height: 1500px;
+    height: 1500px;
     background: rgba(37, 37, 37, 0.178);
 }
 
-.menu-time li {
+.menu-time2 {
     float: right;
     max-width: 30%;
     width: 500px;
     height: 300px;
     margin: 80px 110px;
     position: relative;
-    /* transform: translateX(-400px); */
+    transform: translateX(-500px);
     transition: all ease 1s;
+    opacity: 0;
 }
 
 .menu-time img {

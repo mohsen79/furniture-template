@@ -64,15 +64,16 @@
     </div>
     <div class="next"></div><div class="prev"></div>
     </div>
-    
-    <ul class="menu-time">
-        <li><img src="img/time1.jpg"></li>
-        <li><img src="img/time2.jpg"></li>
-        <li><img src="img/time3.jpg"></li>
-        <li><img src="img/time4.jpg"></li>
-        <li><img src="img/time5.jpg"></li>
-        <li><img src="img/time6.jpg"></li>
+    <div class="menu-time">
+    <ul>
+        <div class="menu-time2"><li><img src="img/time1.jpg"></li></div>
+        <div class="menu-time2"><li><img src="img/time2.jpg"></li></div>
+        <div class="menu-time2"><li><img src="img/time3.jpg"></li></div>
+        <div class="menu-time2"><li><img src="img/time4.jpg"></li></div>
+        <div class="menu-time2"><li><img src="img/time5.jpg"></li></div>
+        <div class="menu-time2"><li><img src="img/time6.jpg"></li></div>
     </ul>
+    </div>
 
 </body>
 </html>
