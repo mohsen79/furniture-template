@@ -2,11 +2,23 @@
     .menu-time2 {
         margin: 80px 100px;
     }
+    .img-back img {
+        margin: 0px 90px;
+    }
+    .back {
+        margin: 30px 140px;
+    }
 }
 
 @media(max-width:1200px) {
     .menu-time2 {
         margin: 80px 80px;
+    }
+    .img-back {
+        margin: 70px 350px;
+    }
+    .img-back img {
+        margin: 0px 70px;
     }
 }
 
@@ -17,6 +29,18 @@
     .menu-time2 {
         margin: 80px 80px;
     }
+    .sign-in {
+        margin: 80px 300px;
+    }
+    .img-back {
+        margin: 70px 300px;
+    }
+    .img-back img {
+        margin: 0px 80px;
+    }
+    .back {
+        margin: 30px 170px;
+    }
 }
 
 @media(max-width:1000px) {
@@ -26,6 +50,15 @@
     .menu-time2 {
         margin: 80px 50px;
     }
+    #username {
+        margin: 50px 40px;
+    }
+    #password {
+        margin: 10px 40px;
+    }
+    .img-back {
+        margin: 70px 200px;
+    }
 }
 
 @media(max-width:900px) {
@@ -34,6 +67,16 @@
     }
     .fade-menu-li li {
         margin: 0 14%;
+    }
+    .sign-in {
+        max-width: 80%;
+        margin: 80px 200px;
+    }
+    #password {
+        margin: 10px 40px;
+    }
+    .img-back {
+        margin: 70px 150px;
     }
 }
 
@@ -46,6 +89,15 @@
     }
     .res-menu {
         right: -300px;
+    }
+    #username {
+        margin: 50px 30px;
+    }
+    #password {
+        margin: 10px 30px;
+    }
+    .img-back {
+        margin: 70px 120px;
     }
 }
 
@@ -77,6 +129,15 @@
     .menu-time {
         height: 1300px;
     }
+    .sign-in {
+        margin: 80px 150px;
+    }
+    .img-back {
+        margin: 70px 100px;
+    }
+    .back {
+        margin: 30px 120px;
+    }
 }
 
 @media(max-width:600px) {
@@ -89,6 +150,25 @@
     }
     .menu-time2 {
         margin: 60px 40px;
+    }
+    #back {
+        margin-left: 40px;
+    }
+    #enter {
+        margin-right: 40px;
+    }
+    .img-back {
+        margin: 70px 80px;
+    }
+    .img-back img {
+        margin: 0px 50px;
+    }
+    .back {
+        width: 150px;
+        margin: 30px 100px;
+    }
+    .show-text {
+        margin: 5px 30px;
     }
 }
 
@@ -114,6 +194,12 @@
     .menu-time {
         height: 1000px;
     }
+    .sign-in {
+        margin: 80px 100px;
+    }
+    .back {
+        margin: 30px 70px;
+    }
 }
 
 @media(max-width:400px) {
@@ -132,6 +218,9 @@
     .p {
         margin: 20px 60px;
         font-size: 15px;
+    }
+    .sign-in {
+        margin: 80px 40px;
     }
 }
 
