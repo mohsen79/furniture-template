@@ -479,3 +479,57 @@ body:hover .menu-time img {
 .show-text {
     padding: 1%;
 }
+
+
+/* panel */
+
+.prof {
+    max-width: 300px;
+    height: 300px;
+    background: blue;
+    border-radius: 200px;
+    margin: 100px 100px;
+}
+
+h2 {
+    color: purple;
+    margin: 30px 500px;
+}
+
+.panel-bar {
+    position: relative;
+    margin: -450px 420px;
+    padding: 4%;
+}
+
+.panel-bar li {
+    margin: 4%;
+    color: rgba(14, 124, 119, 0.76);
+}
+
+.panel-bar li:hover {
+    color: green;
+}
+
+.pftxt {
+    max-width: 400px;
+    height: 200px;
+    background: rgb(140, 0, 255);
+    margin-right: 400px;
+    margin-top: 450px;
+    margin-left: 500px;
+    word-wrap: break-word;
+    padding: 1%;
+}
+
+.out li {
+    float: right;
+    margin-right: 30px;
+    margin-top: -70px;
+    color: orange;
+}
+
+.out li:hover {
+    color: red;
+    transition: all ease 0.7s;
+}
