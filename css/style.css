@@ -98,7 +98,7 @@
     right: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 0;
 }
 
 .log {
@@ -171,7 +171,7 @@ body:hover li {
     background: rgba(100, 88, 88, 0.774);
     position: relative;
     float: right;
-    z-index: 3;
+    z-index: 5;
     border-radius: 0 0 0 8px;
     right: -300px;
     display: none;
@@ -201,6 +201,7 @@ body:hover li {
 .li2 {
     display: block;
     float: left;
+    z-index: 5;
 }
 
 .li2 li {
@@ -392,6 +393,13 @@ body:hover .menu-time img {
 
 /* log in page */
 
+.login-title {
+    width: 200px;
+    height: 50px;
+    margin: 30px auto;
+    color: green;
+}
+
 .sign-in {
     max-width: 40%;
     height: 300px;
@@ -491,7 +499,7 @@ body:hover .menu-time img {
     margin: 100px 100px;
 }
 
-h2 {
+.h2 {
     color: purple;
     margin: 30px 500px;
 }
@@ -532,4 +540,317 @@ h2 {
 .out li:hover {
     color: red;
     transition: all ease 0.7s;
+}
+
+
+/* members page */
+
+.admin-box {
+    max-width: 750px;
+    min-height: 200px;
+    margin: 50px 300px;
+}
+
+.admin-box legend {
+    margin: 3%;
+}
+
+.admin-box table {
+    max-width: 90%;
+    width: 700px;
+    background: rgb(69, 88, 255);
+    margin: 10px;
+    color: rgb(0, 0, 0);
+    border-color: rgb(255, 30, 30);
+    border-radius: 5px;
+}
+
+.member-box {
+    max-width: 750px;
+    min-height: 200px;
+    margin: 50px 300px;
+}
+
+.member-box legend {
+    margin: 3%;
+}
+
+.member-box table {
+    max-width: 90%;
+    width: 700px;
+    background: rgb(69, 88, 255);
+    margin: 10px;
+    color: rgb(0, 0, 0);
+    border-color: rgb(255, 30, 30);
+    border-radius: 5px;
+}
+
+.del:hover {
+    background: rgb(214, 8, 8);
+    cursor: pointer;
+}
+
+.ed:hover {
+    background: yellow;
+    cursor: pointer;
+}
+
+.back2 {
+    width: 200px;
+    height: 30px;
+    background: rgba(54, 207, 23, 0.753);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    float: right;
+    margin-right: 600px;
+}
+
+
+/* add admin */
+
+.adminadd {
+    max-width: 40%;
+    height: 300px;
+    background: rgb(69, 88, 255);
+    /* margin: 80px 380px; */
+    margin: 80px auto;
+    border-radius: 8px;
+}
+
+#adminname {
+    max-width: 80%;
+    width: 450px;
+    height: 40px;
+    margin: 50px;
+    border-radius: 5px;
+    background: rgb(103, 212, 194)
+}
+
+#adminpassword {
+    max-width: 80%;
+    width: 450px;
+    height: 40px;
+    margin: 10px 50px;
+    border-radius: 5px;
+    background: rgb(103, 212, 194)
+}
+
+#add {
+    max-width: 30%;
+    width: 250px;
+    height: 40px;
+    background: orange;
+    float: right;
+    margin: 20px 10px;
+    margin-right: 60px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.admin-title {
+    width: 200px;
+    height: 50px;
+    margin: 30px auto;
+    color: green;
+}
+
+
+/* EDIT PAGE */
+
+.edit-title {
+    width: 150px;
+    color: rgb(23, 139, 110);
+    margin: auto;
+    padding: 10px;
+}
+
+.tbl-menu {
+    max-width: 80%;
+    width: 700px;
+    margin: auto;
+}
+
+.tbl-menu legend {
+    color: red;
+    margin: 2% 10%;
+}
+
+.tbl-menu table {
+    max-width: 90%;
+    width: 600px;
+    text-align: center;
+    background: lightgreen;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.tbl-main-pic {
+    max-width: 80%;
+    width: 700px;
+    margin: auto;
+}
+
+.tbl-main-pic legend {
+    color: red;
+    margin: 2% 10%;
+}
+
+.tbl-main-pic table {
+    max-width: 90%;
+    width: 600px;
+    text-align: center;
+    background: lightgreen;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.tbl-fademenu-1 {
+    max-width: 80%;
+    width: 700px;
+    margin: auto;
+}
+
+.tbl-fademenu-1 legend {
+    color: red;
+    margin: 2% 10%;
+}
+
+.tbl-fademenu-1 table {
+    max-width: 90%;
+    width: 600px;
+    text-align: center;
+    background: lightgreen;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.tbl-fademenu-2 {
+    max-width: 80%;
+    width: 700px;
+    margin: auto;
+}
+
+.tbl-fademenu-2 legend {
+    color: red;
+    margin: 2% 10%;
+}
+
+.tbl-fademenu-2 table {
+    max-width: 90%;
+    width: 600px;
+    text-align: center;
+    background: lightgreen;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.tbl-slider {
+    max-width: 80%;
+    width: 700px;
+    margin: auto;
+}
+
+.tbl-slider legend {
+    color: red;
+    margin: 2% 10%;
+}
+
+.tbl-menu-time table {
+    max-width: 90%;
+    width: 600px;
+    text-align: center;
+    background: lightgreen;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.tbl-menu-time {
+    max-width: 80%;
+    width: 700px;
+    margin: auto;
+}
+
+.tbl-menu-time legend {
+    color: red;
+    margin: 2% 10%;
+}
+
+.tbl-slider table {
+    max-width: 90%;
+    width: 600px;
+    text-align: center;
+    background: lightgreen;
+    border-radius: 5px;
+    margin: auto;
+}
+
+fieldset {
+    padding: 10px;
+    margin: 50px;
+    border-radius: 5px;
+    border-color: green;
+}
+
+fieldset input {
+    max-width: 50%;
+    width: 500px;
+    height: 50px;
+    border-radius: 1px;
+    font-size: 18px;
+}
+
+#edit-main-pic {
+    color: blue;
+    text-align: center;
+}
+
+#title-ok {
+    width: 100px;
+    border-radius: 5px;
+    background: yellow;
+    margin: auto 100px;
+    cursor: pointer;
+}
+
+#upload-btn {
+    width: 100px;
+    border-radius: 5px;
+    background: yellow;
+    margin: auto 100px;
+    cursor: pointer;
+}
+
+#upload-btn2 {
+    width: 100px;
+    border-radius: 5px;
+    background: yellow;
+    margin: auto 100px;
+    cursor: pointer;
+}
+
+#upload-btn3 {
+    width: 100px;
+    border-radius: 5px;
+    background: yellow;
+    margin: auto 100px;
+    cursor: pointer;
+}
+
+#fade-menu-ok,
+#fade-menu-ok2 {
+    width: 200px;
+    border-radius: 5px;
+    background: yellow;
+    margin: auto 50px;
+    cursor: pointer;
+}
+
+#send-photo {
+    width: 200px;
+    border-radius: 5px;
+    background: yellow;
+    margin: auto 50px;
+    cursor: pointer;
 }

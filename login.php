@@ -8,6 +8,7 @@
 </haed>
 <body>
 
+    <div class="login-title"><h2>SIGN UP</h2></div>
     <div class="sign-in">
         <input type="text" name="username" placeholder="username" id="username">
         <input type="password" name="pas" placeholder="password" id="password">

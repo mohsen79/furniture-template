@@ -107,7 +107,7 @@ $(document).ready(function() {
                 right: 0
             }, 1000);
             $(this).hide();
-            $('body').append("<div class='back-light2' </div>");
+            $('body').append("<div class='back-light2'></div>");
         }
         $('.back-light2').click(function() {
             $("#bars").show();
