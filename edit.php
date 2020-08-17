@@ -106,17 +106,14 @@
                title :&nbsp&nbsp&nbsp<input type="text" id="edit-main-menu" name="title"><input type="submit" name="ok" id="title-ok" value="ok">
             </form>
             <?php
-                include "backend.php";
+                //include "backend.php";
                 if(isset($_GET["empty"])){
                     echo "<font color=red>fill the title</font>";
-                    //echo "<script>alert('empty')</script>";
                 }
                 if(isset($_GET["ok"])){
                     echo "change has done successfully";
-                  //  echo "<script>alert('success')</script>";
                 }
                 if(isset($_GET["error"])){
-                   // echo "<script>alert('error')</script>";
                     echo "ERROR";
                 }
             ?>
@@ -127,7 +124,7 @@
                select a photo :&nbsp&nbsp&nbsp<input type="file" id="edit-main-pic" name="pic-input">
                <input type="submit" name="send-photo" id="send-photo" value="send">
                <br><br>
-               src : &nbsp&nbsp <input type="text" id="edit-main-upload"><input type="submit" name="upload-btn" id="upload-btn" value="upload">
+               src : &nbsp&nbsp <input type="text" id="edit-main-upload" name="main-pic"><input type="submit" name="upload-btn" id="upload-btn" value="upload">
             </form>
             <?php
                 require "backend.php";
@@ -137,11 +134,16 @@
                 if(isset($_GET["error2"])){
                     echo "ERROR";
                 }
-                if(isset($_GET["ok2"])){
-                    //echo "file has been uploaded successfully <br>";
-                 echo '<a href="'.$filename.'" > file address</a>';
-                }
-               // echo '<a href="'.$filename.'" > file address</a>';
+                if(isset($_GET["empty3"])){
+                    echo "empty";
+                } 
+                if(isset($_GET["ok3"])){
+                    echo "right";
+                } 
+                if(isset($_GET["error3"])){
+                    echo "ERROR";
+                } 
+
             ?>
         </fieldset>
         <fieldset>
