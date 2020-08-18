@@ -854,3 +854,20 @@ fieldset input {
     margin: auto 50px;
     cursor: pointer;
 }
+
+#fade-pic,
+#fade-pic2 {
+    width: 200px;
+    border-radius: 5px;
+    background: yellow;
+    margin: auto 50px;
+    cursor: pointer;
+}
+
+#send-photo3 {
+    width: 200px;
+    border-radius: 5px;
+    background: yellow;
+    margin: auto 50px;
+    cursor: pointer;
+}
