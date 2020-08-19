@@ -586,8 +586,11 @@ body:hover .menu-time img {
 }
 
 .del:hover {
-    background: rgb(214, 8, 8);
-    cursor: pointer;
+    background: red;
+}
+
+.del a {
+    color: black;
 }
 
 .ed:hover {

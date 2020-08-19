@@ -1,6 +1,8 @@
 <html>
 
 <head>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="responsive.css">
 </head>
@@ -17,15 +19,14 @@
                 <th colspan="3px">title</th>
             </tr>
             <?php
-
-            $ins1 = "SELECT * FROM `main menu` ORDER BY `id` DESC;";
-            $conn = mysqli_connect("localhost", "root", "mysql", "furniture");
-            $result1 = mysqli_query($conn, $ins1);
-            while ($fetch = mysqli_fetch_assoc($result1)) {
+                $sql = "SELECT * FROM `main menu`";
+                $result8 = $connect->prepare($sql);
+                $result8->execute();
+                while($row = $result8->fetch(PDO::FETCH_OBJ)){
             ?>
                 <tr>
-                    <td><?php echo $fetch['title'] ?></td>
-                    <td class="del">delete</td>
+                    <td><?php echo $row->title ?></td>
+                    <td style="width:100px" class="del"><a href="backend.php?id=<?php echo $row->id ; ?> ">delete</a></td>
                 </tr>
             <?php } ?>
         </table>
@@ -45,7 +46,7 @@
             ?>
                 <tr>
                     <td><?php echo $fetch2["src"] ?></td>
-                    <td class="del">delete</td>
+                    <td><input type="submit" name="del" value=delete id="del"></td>
                 </tr>
             <?php } ?>
         </table>
@@ -64,17 +65,17 @@
             <tr>
                 <th style="width:100px">title</th>
                 <td><?php echo $fetch3["title"] ?></td>
-                <td class="del" style="width:100px">delete</td>
+                <td style="width:100px"><input type="submit" name="del" value=delete id="del"></td>
             </tr>
             <tr>
                 <th>content</th>
                 <td><?php echo $fetch3["content"] ?></td>
-                <td class="del">delete</td>
+                <td><input type="submit" name="del" value=delete id="del"></td>
             </tr>
             <tr>
                 <th>src</th>
                 <td><?php echo $fetch3["src"] ?></td>
-                <td class="del">delete</td>
+                <td><input type="submit" name="del" value=delete id="del"></td>
             </tr>
         <?php } ?>
         </table>
@@ -92,17 +93,17 @@
                 <tr>
                     <th style="width:100px">title</th>
                     <td><?php echo $fetch4["title"] ?></td>
-                    <td class="del" style="width:100px">delete</td>
+                    <td style="width:100px"><input type="submit" name="del" value=delete id="del"></td>
                 </tr>
                 <tr>
                     <th>content</th>
                     <td><?php echo $fetch4["content"] ?></td>
-                    <td class="del">delete</td>
+                    <td><input type="submit" name="del" value=delete id="del"></td>
                 </tr>
                 <tr>
                     <th>src</th>
                     <td><?php echo $fetch4["src"] ?></td>
-                    <td class="del">delete</td>
+                    <td><input type="submit" name="del" value=delete id="del"></td>
                 </tr>
             <?php } ?>
         </table>
@@ -122,7 +123,7 @@
             ?>
                 <tr>
                     <td><?php echo $fetch5["src"] ?></td>
-                    <td class="del" style="width:100px">delete</td>
+                    <td style="width:100px"><input type="submit" name="del" value=delete id="del"></td>
                 </tr>
             <?php } ?>
         </table>
@@ -142,7 +143,7 @@
             ?>
                 <tr>
                     <td><?php echo $fetch6["src"] ?></td>
-                    <td class="del" style="width:100px">delete</td>
+                    <td style="width:100px"><input type="submit" name="del" value=delete id="del"></td>
                 </tr>
             <?php } ?>
         </table>

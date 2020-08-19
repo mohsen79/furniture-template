@@ -35,8 +35,8 @@ if (isset($_POST["send-photo"])) {
             if (move_uploaded_file($filetemp, $filename)) {
                 // "file has been uploaded successfully<br>";
                 //  echo "<a href='".$filename."'> file address </a>";
-                $address=(stream_resolve_include_path($filename));
-               echo "<script>alert('the photo address : ".$address."')</script>";
+                $address = (stream_resolve_include_path($filename));
+                echo "<script>alert('the photo address : " . $address . "')</script>";
             } else {
                 header("location:edit.php?error2=5");
                 exit;
@@ -74,9 +74,9 @@ if (isset($_POST["fade-pic-btn"])) {
         $filetemp2 = $_FILES["fade-pic"]["tmp_name"];
         if (is_uploaded_file($filetemp2)) {
             if (move_uploaded_file($filetemp2, $filename2)) {
-               $address=(stream_resolve_include_path($filename2));
-               echo "<script>alert('the photo address : ".$address."')</script>";
-               header("refresh:0");
+                $address = (stream_resolve_include_path($filename2));
+                echo "<script>alert('the photo address : " . $address . "')</script>";
+                header("refresh:0");
             } else {
                 header("location:edit.php?error7=5");
                 exit;
@@ -117,9 +117,9 @@ if (isset($_POST["fade-pic-btn2"])) {
         $filetemp2 = $_FILES["fade-pic2"]["tmp_name"];
         if (is_uploaded_file($filetemp2)) {
             if (move_uploaded_file($filetemp2, $filename2)) {
-               $address=(stream_resolve_include_path($filename2));
-               echo "<script>alert('the photo address : ".$address."')</script>";
-               header("refresh:0");
+                $address = (stream_resolve_include_path($filename2));
+                echo "<script>alert('the photo address : " . $address . "')</script>";
+                header("refresh:0");
             } else {
                 header("location:edit.php?error7=5");
                 exit;
@@ -160,9 +160,9 @@ if (isset($_POST["send-photo2"])) {
         $filetemp2 = $_FILES["pic-input2"]["tmp_name"];
         if (is_uploaded_file($filetemp2)) {
             if (move_uploaded_file($filetemp2, $filename2)) {
-               $address=(stream_resolve_include_path($filename2));
-               echo "<script>alert('the photo address : ".$address."')</script>";
-               header("refresh:0");
+                $address = (stream_resolve_include_path($filename2));
+                echo "<script>alert('the photo address : " . $address . "')</script>";
+                header("refresh:0");
             } else {
                 header("location:edit.php?error6=5");
                 exit;
@@ -201,9 +201,9 @@ if (isset($_POST["send-btn3"])) {
         $filetemp2 = $_FILES["time-input3"]["tmp_name"];
         if (is_uploaded_file($filetemp2)) {
             if (move_uploaded_file($filetemp2, $filename2)) {
-               $address=(stream_resolve_include_path($filename2));
-               echo "<script>alert('the photo address : ".$address."')</script>";
-               header("refresh:0");
+                $address = (stream_resolve_include_path($filename2));
+                echo "<script>alert('the photo address : " . $address . "')</script>";
+                header("refresh:0");
             } else {
                 header("location:edit.php?error15=5");
                 exit;
@@ -231,4 +231,21 @@ if (isset($_POST["upload-btn3"])) {
         header("location:edit.php?error16=9");
         exit;
     }
+}
+
+// main menu delete button 
+
+if (isset($_GET["id"])) {
+    $id = $_GET["id"];
+    $sql2 = "DELETE FROM `main menu` WHERE id=:id";
+    $result9 = $connect->prepare($sql2);
+    $result9->bindparam(":id",$id);
+    $result9->execute();
+    if ($result9) {
+        header("location:edit.php");
+        echo "right";
+    }
+    else{
+        echo "error";
+    }   
 }
