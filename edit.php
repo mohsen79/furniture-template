@@ -5,9 +5,10 @@
     <link rel="stylesheet" href="responsive.css">
 </head>
 <?php include "backend.php"; ?>
-<body>
 
+<body>
     <h2 class="edit-title">EDIT PAGE</h2>
+
 
     <div class="tbl-menu">
         <table border="2px">
@@ -15,14 +16,18 @@
             <tr>
                 <th colspan="3px">title</th>
             </tr>
-            <tr>
-                <td>home</td>
-                <td class="del">delete</td>
-            </tr>
-            <tr>
-                <td>about us</td>
-                <td class="del">delete</td>
-            </tr>
+            <?php
+
+            $ins1 = "SELECT * FROM `main menu` ORDER BY `id` DESC;";
+            $conn = mysqli_connect("localhost", "root", "mysql", "furniture");
+            $result1 = mysqli_query($conn, $ins1);
+            while ($fetch = mysqli_fetch_assoc($result1)) {
+            ?>
+                <tr>
+                    <td><?php echo $fetch['title'] ?></td>
+                    <td class="del">delete</td>
+                </tr>
+            <?php } ?>
         </table>
     </div>
     <div class="tbl-main-pic">
@@ -31,50 +36,75 @@
             <tr>
                 <th colspan="3px">src</th>
             </tr>
-            <tr>
-                <td>name</td>
-                <td class="del">delete</td>
-            </tr>
+            <?php
+
+            $ins2 = "SELECT * FROM `main picture` ORDER BY `id` DESC;";
+            $conn2 = mysqli_connect("localhost", "root", "mysql", "furniture");
+            $result2 = mysqli_query($conn2, $ins2);
+            while ($fetch2 = mysqli_fetch_assoc($result2)) {
+            ?>
+                <tr>
+                    <td><?php echo $fetch2["src"] ?></td>
+                    <td class="del">delete</td>
+                </tr>
+            <?php } ?>
         </table>
     </div>
     <div class="tbl-fademenu-1">
         <table border="2px">
             <legend>fade menu section 1</legend>
             <tr>
-                <th colspan="3px">src</th>
+                <?php
+
+                $ins3 = "SELECT * FROM `fade menu1` ORDER BY `id` DESC;";
+                $conn3 = mysqli_connect("localhost", "root", "mysql", "furniture");
+                $result3 = mysqli_query($conn3, $ins3);
+                while ($fetch3 = mysqli_fetch_assoc($result3)) {
+                ?>
+            <tr>
+                <th style="width:100px">title</th>
+                <td><?php echo $fetch3["title"] ?></td>
+                <td class="del" style="width:100px">delete</td>
             </tr>
             <tr>
-                <td>title</td>
+                <th>content</th>
+                <td><?php echo $fetch3["content"] ?></td>
                 <td class="del">delete</td>
             </tr>
             <tr>
-                <td>content</td>
+                <th>src</th>
+                <td><?php echo $fetch3["src"] ?></td>
                 <td class="del">delete</td>
             </tr>
-            <tr>
-                <td>name</td>
-                <td class="del">delete</td>
-            </tr>
+        <?php } ?>
         </table>
     </div>
     <div class="tbl-fademenu-2">
         <table border="2px">
             <legend>fade menu section 2</legend>
-            <tr>
-                <th colspan="3px">src</th>
-            </tr>
-            <tr>
-                <td>title</td>
-                <td class="del">delete</td>
-            </tr>
-            <tr>
-                <td>content</td>
-                <td class="del">delete</td>
-            </tr>
-            <tr>
-                <td>name</td>
-                <td class="del">delete</td>
-            </tr>
+            <?php
+
+            $ins4 = "SELECT * FROM `fade menu2` ORDER BY `id` DESC;";
+            $conn4 = mysqli_connect("localhost", "root", "mysql", "furniture");
+            $result4 = mysqli_query($conn4, $ins4);
+            while ($fetch4 = mysqli_fetch_assoc($result4)) {
+            ?>
+                <tr>
+                    <th style="width:100px">title</th>
+                    <td><?php echo $fetch4["title"] ?></td>
+                    <td class="del" style="width:100px">delete</td>
+                </tr>
+                <tr>
+                    <th>content</th>
+                    <td><?php echo $fetch4["content"] ?></td>
+                    <td class="del">delete</td>
+                </tr>
+                <tr>
+                    <th>src</th>
+                    <td><?php echo $fetch4["src"] ?></td>
+                    <td class="del">delete</td>
+                </tr>
+            <?php } ?>
         </table>
     </div>
     <div class="tbl-slider">
@@ -83,10 +113,18 @@
             <tr>
                 <th colspan="3px">src</th>
             </tr>
-            <tr>
-                <td>name</td>
-                <td class="del">delete</td>
-            </tr>
+            <?php
+
+            $ins5 = "SELECT * FROM `slider` ORDER BY `id` DESC;";
+            $conn5 = mysqli_connect("localhost", "root", "mysql", "furniture");
+            $result5 = mysqli_query($conn5, $ins5);
+            while ($fetch5 = mysqli_fetch_assoc($result5)) {
+            ?>
+                <tr>
+                    <td><?php echo $fetch5["src"] ?></td>
+                    <td class="del" style="width:100px">delete</td>
+                </tr>
+            <?php } ?>
         </table>
     </div>
     <div class="tbl-menu-time">
@@ -95,10 +133,18 @@
             <tr>
                 <th colspan="3px">src</th>
             </tr>
-            <tr>
-                <td>name</td>
-                <td class="del">delete</td>
-            </tr>
+            <?php
+
+            $ins6 = "SELECT * FROM `menu time` ORDER BY `id` DESC;";
+            $conn6 = mysqli_connect("localhost", "root", "mysql", "furniture");
+            $result6 = mysqli_query($conn6, $ins6);
+            while ($fetch6 = mysqli_fetch_assoc($result6)) {
+            ?>
+                <tr>
+                    <td><?php echo $fetch6["src"] ?></td>
+                    <td class="del" style="width:100px">delete</td>
+                </tr>
+            <?php } ?>
         </table>
     </div>
 
@@ -162,14 +208,14 @@
 
 
         ?>
-            <form action="" method="post" enctype="multipart/form-data">
-                title :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="edit-fademenu-title" name="fade-title1"><br><br><br>
-                content : &nbsp&nbsp&nbsp <input type="text" id="edit-fademenu-content" name="fade-con1">
-                <br><br><br>
-                select a photo :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="file" name="fade-pic"><br>
-                src : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="fade-menu-src" name="fade-src1"><br><br><br>
-                <input type="submit" id="fade-menu-ok" value="ok" name="fade-btn1"><input type="submit" name="fade-pic-btn" id="fade-pic" value="photo adress">
-            </form>
+        <form action="" method="post" enctype="multipart/form-data">
+            title :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="edit-fademenu-title" name="fade-title1"><br><br><br>
+            content : &nbsp&nbsp&nbsp <input type="text" id="edit-fademenu-content" name="fade-con1">
+            <br><br><br>
+            select a photo :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="file" name="fade-pic"><br>
+            src : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="fade-menu-src" name="fade-src1"><br><br><br>
+            <input type="submit" id="fade-menu-ok" value="ok" name="fade-btn1"><input type="submit" name="fade-pic-btn" id="fade-pic" value="photo adress">
+        </form>
         <?php
         //}
         if (isset($_GET["empty4"])) {
@@ -216,7 +262,7 @@
             src : &nbsp&nbsp <input type="text" id="edit-slider-upload" name="slider-pic"><input type="submit" id="upload-btn2" value="upload" name="upload-btn2">
         </form>
         <?php
-       // include "backend.php";
+        // include "backend.php";
         if (isset($_GET["empty6"])) {
             echo "<font color=red>empty</font>";
         }

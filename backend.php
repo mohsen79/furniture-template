@@ -1,6 +1,8 @@
 <?php
 
 include_once "connection.php";
+
+
 // main menu
 if (isset($_POST["ok"])) {
     if (empty($_POST["title"])) {
