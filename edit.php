@@ -10,7 +10,7 @@
 
 <body>
     <h2 class="edit-title">EDIT PAGE</h2>
-
+    <a href="panel.php"><h2 class="edit-back">panel</h2></a>
 
     <div class="tbl-menu">
         <table border="2px">
@@ -19,14 +19,14 @@
                 <th colspan="3px">title</th>
             </tr>
             <?php
-                $sql = "SELECT * FROM `main menu`";
-                $result8 = $connect->prepare($sql);
-                $result8->execute();
-                while($row = $result8->fetch(PDO::FETCH_OBJ)){
+            $sql = "SELECT * FROM `main menu`";
+            $result = $connect->prepare($sql);
+            $result->execute();
+            while ($row = $result->fetch(PDO::FETCH_OBJ)) {
             ?>
                 <tr>
                     <td><?php echo $row->title ?></td>
-                    <td style="width:100px" class="del"><a href="backend.php?id=<?php echo $row->id ; ?> ">delete</a></td>
+                    <td style="width:100px" class="del"><a href="backend.php?id=<?php echo $row->id; ?> ">delete</a></td>
                 </tr>
             <?php } ?>
         </table>
@@ -39,14 +39,14 @@
             </tr>
             <?php
 
-            $ins2 = "SELECT * FROM `main picture` ORDER BY `id` DESC;";
-            $conn2 = mysqli_connect("localhost", "root", "mysql", "furniture");
-            $result2 = mysqli_query($conn2, $ins2);
-            while ($fetch2 = mysqli_fetch_assoc($result2)) {
+            $sql2 = "SELECT * FROM `main picture`";
+            $result2 = $connect->prepare($sql2);
+            $result2->execute();
+            while ($row2 = $result2->fetch(PDO::FETCH_OBJ)) {
             ?>
                 <tr>
-                    <td><?php echo $fetch2["src"] ?></td>
-                    <td><input type="submit" name="del" value=delete id="del"></td>
+                    <td><?php echo $row2->src ?></td>
+                    <td style="width:100px" class="del"><a href="backend.php?id=<?php echo $row2->id; ?> ">delete</a></td>
                 </tr>
             <?php } ?>
         </table>
@@ -57,25 +57,23 @@
             <tr>
                 <?php
 
-                $ins3 = "SELECT * FROM `fade menu1` ORDER BY `id` DESC;";
-                $conn3 = mysqli_connect("localhost", "root", "mysql", "furniture");
-                $result3 = mysqli_query($conn3, $ins3);
-                while ($fetch3 = mysqli_fetch_assoc($result3)) {
+                $sql3 = "SELECT * FROM `fade menu1`";
+                $result3 = $connect->prepare($sql3);
+                $result3->execute();
+                while ($row3 = $result3->fetch(PDO::FETCH_OBJ)) {
                 ?>
             <tr>
                 <th style="width:100px">title</th>
-                <td><?php echo $fetch3["title"] ?></td>
-                <td style="width:100px"><input type="submit" name="del" value=delete id="del"></td>
+                <td><?php echo $row3->title ?></td>
+                <td style="width:100px" class="del" rowspan="3px"><a href="backend.php?id=<?php echo $row3->id; ?> ">delete</a></td>
             </tr>
             <tr>
                 <th>content</th>
-                <td><?php echo $fetch3["content"] ?></td>
-                <td><input type="submit" name="del" value=delete id="del"></td>
+                <td><?php echo $row3->content ?></td>
             </tr>
             <tr>
                 <th>src</th>
-                <td><?php echo $fetch3["src"] ?></td>
-                <td><input type="submit" name="del" value=delete id="del"></td>
+                <td><?php echo $row3->src ?></td>
             </tr>
         <?php } ?>
         </table>
@@ -85,25 +83,23 @@
             <legend>fade menu section 2</legend>
             <?php
 
-            $ins4 = "SELECT * FROM `fade menu2` ORDER BY `id` DESC;";
-            $conn4 = mysqli_connect("localhost", "root", "mysql", "furniture");
-            $result4 = mysqli_query($conn4, $ins4);
-            while ($fetch4 = mysqli_fetch_assoc($result4)) {
+            $sql4 = "SELECT * FROM `fade menu2`";
+            $result4 = $connect->prepare($sql4);
+            $result4->execute();
+            while ($row4 = $result4->fetch(PDO::FETCH_OBJ)) {
             ?>
                 <tr>
                     <th style="width:100px">title</th>
-                    <td><?php echo $fetch4["title"] ?></td>
-                    <td style="width:100px"><input type="submit" name="del" value=delete id="del"></td>
+                    <td id="td"><?php echo $row4->title; ?></td>
+                    <td style="width:100px" class="del" rowspan="3px"><a href="backend.php?id=<?php echo $row4->id; ?> ">delete</a></td>
                 </tr>
                 <tr>
                     <th>content</th>
-                    <td><?php echo $fetch4["content"] ?></td>
-                    <td><input type="submit" name="del" value=delete id="del"></td>
+                    <td><?php echo $row4->content ?></td>
                 </tr>
                 <tr>
                     <th>src</th>
-                    <td><?php echo $fetch4["src"] ?></td>
-                    <td><input type="submit" name="del" value=delete id="del"></td>
+                    <td><?php echo $row4->src ?></td>
                 </tr>
             <?php } ?>
         </table>
@@ -116,14 +112,14 @@
             </tr>
             <?php
 
-            $ins5 = "SELECT * FROM `slider` ORDER BY `id` DESC;";
-            $conn5 = mysqli_connect("localhost", "root", "mysql", "furniture");
-            $result5 = mysqli_query($conn5, $ins5);
-            while ($fetch5 = mysqli_fetch_assoc($result5)) {
+            $sql5 = "SELECT * FROM `slider`";
+            $result5 = $connect->prepare($sql5);
+            $result5->execute();
+            while ($row5 = $result5->fetch(PDO::FETCH_OBJ)) {
             ?>
                 <tr>
-                    <td><?php echo $fetch5["src"] ?></td>
-                    <td style="width:100px"><input type="submit" name="del" value=delete id="del"></td>
+                    <td><?php echo $row5->src ?></td>
+                    <td style="width:100px" class="del"><a href="backend.php?id=<?php echo $row5->id; ?> ">delete</a></td>
                 </tr>
             <?php } ?>
         </table>
@@ -135,15 +131,14 @@
                 <th colspan="3px">src</th>
             </tr>
             <?php
-
-            $ins6 = "SELECT * FROM `menu time` ORDER BY `id` DESC;";
-            $conn6 = mysqli_connect("localhost", "root", "mysql", "furniture");
-            $result6 = mysqli_query($conn6, $ins6);
-            while ($fetch6 = mysqli_fetch_assoc($result6)) {
+            $sql6 = "SELECT * FROM `menu time`";
+            $result6 = $connect->prepare($sql6);
+            $result6->execute();
+            while ($row6 = $result6->fetch(PDO::FETCH_OBJ)) {
             ?>
                 <tr>
-                    <td><?php echo $fetch6["src"] ?></td>
-                    <td style="width:100px"><input type="submit" name="del" value=delete id="del"></td>
+                    <td><?php echo $row6->src ?></td>
+                    <td style="width:100px" class="del"><a href="backend.php?id=<?php echo $row6->id; ?> ">delete</a></td>
                 </tr>
             <?php } ?>
         </table>
@@ -196,25 +191,12 @@
     </fieldset>
     <fieldset>
         <legend>edit main fade menu section 1</legend>
-        <?php
-        // $ins = "SELECT * FROM `fade menu1` ORDER BY  `id` DESC ; "; 
-        // $result = $connect->prepare($ins);
-        // $result->execute();
-        // $fetch = $result->fetch(PDO::FETCH_ASSOC);  
-        // while($fetch){
-        // $conn = mysqli_connect("localhost", "root", "mysql", "furniture");
-        // $ins = "SELECT * FROM `fade menu1` ORDER BY  `id` DESC ; ";
-        // $result = mysqli_query($conn, $ins);
-        // while ($fetch = mysqli_fetch_assoc($result)) {
-
-
-        ?>
         <form action="" method="post" enctype="multipart/form-data">
             title :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="edit-fademenu-title" name="fade-title1"><br><br><br>
             content : &nbsp&nbsp&nbsp <input type="text" id="edit-fademenu-content" name="fade-con1">
             <br><br><br>
             select a photo :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="file" name="fade-pic"><br>
-            src : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="fade-menu-src" name="fade-src1"><br><br><br>
+            src : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="fade-menu-src" name="fade-src1" ><br><br><br>
             <input type="submit" id="fade-menu-ok" value="ok" name="fade-btn1"><input type="submit" name="fade-pic-btn" id="fade-pic" value="photo adress">
         </form>
         <?php

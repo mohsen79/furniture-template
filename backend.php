@@ -233,19 +233,97 @@ if (isset($_POST["upload-btn3"])) {
     }
 }
 
-// main menu delete button 
+// main menu delete
 
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
-    $sql2 = "DELETE FROM `main menu` WHERE id=:id";
-    $result9 = $connect->prepare($sql2);
-    $result9->bindparam(":id",$id);
-    $result9->execute();
-    if ($result9) {
+    $sql = "DELETE FROM `main menu` WHERE id=:id";
+    $result = $connect->prepare($sql);
+    $result->bindparam(":id",$id);
+    $result->execute();
+    if ($result) {
         header("location:edit.php");
         echo "right";
     }
     else{
         echo "error";
     }   
+}
+
+// main picture delete 
+if(isset($_GET["id"])){
+    $id2=$_GET["id"];
+    $sql2 = "DELETE FROM `main picture` WHERE id=:id";
+    $result2 = $connect->prepare($sql2);
+    $result2->bindparam(":id",$id2);
+    $result2->execute();
+    if ($result2) {
+        header("location:edit.php");
+        echo "right";
+    }
+    else{
+        echo "error";
+    }  
+}
+
+// fade menu1 delete
+if(isset($_GET["id"])){
+    $id3=$_GET["id"];
+    $sql3 = "DELETE FROM `fade menu1` WHERE id=:id";
+    $result3= $connect->prepare($sql3);
+    $result3->bindparam(":id",$id3);
+    $result3->execute();
+    if ($result3) {
+        header("location:edit.php");
+        echo "right";
+    }
+    else{
+        echo "error";
+    }  
+}
+// fade menu2 delete 
+if(isset($_GET["id"])){
+    $id4=$_GET["id"];
+    $sql4 = "DELETE FROM `fade menu2` WHERE id=:id";
+    $result4= $connect->prepare($sql4);
+    $result4->bindparam(":id",$id4);
+    $result4->execute();
+    if ($result4) {
+        header("location:edit.php");
+        echo "right";
+    }
+    else{
+        echo "error";
+    }  
+}
+
+// slider delete 
+if(isset($_GET["id"])){
+    $id5=$_GET["id"];
+    $sql5 = "DELETE FROM `slider` WHERE id=:id";
+    $result5= $connect->prepare($sql5);
+    $result5->bindparam(":id",$id5);
+    $result5->execute();
+    if ($result5) {
+        header("location:edit.php");
+        echo "right";
+    }
+    else{
+        echo "error";
+    }  
+}
+// menu time 
+if(isset($_GET["id"])){
+    $id6=$_GET["id"];
+    $sql6 = "DELETE FROM `menu time` WHERE id=:id";
+    $result6= $connect->prepare($sql6);
+    $result6->bindparam(":id",$id6);
+    $result6->execute();
+    if ($result6) {
+        header("location:edit.php");
+        echo "right";
+    }
+    else{
+        echo "error";
+    }  
 }

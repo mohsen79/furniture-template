@@ -593,9 +593,16 @@ body:hover .menu-time img {
     color: black;
 }
 
-.ed:hover {
+.ed1:hover {
     background: yellow;
-    cursor: pointer;
+}
+
+.ed1 {
+    color: black;
+    width: 100%;
+    height: 80px;
+    border: none;
+    background: transparent;
 }
 
 .back2 {
@@ -873,4 +880,9 @@ fieldset input {
     background: yellow;
     margin: auto 50px;
     cursor: pointer;
+}
+
+.edit-back {
+    float: right;
+    margin: 0 50px;
 }
