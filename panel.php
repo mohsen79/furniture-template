@@ -19,7 +19,7 @@
         $result->execute();
         while($row=$result->fetch(PDO::FETCH_OBJ)){
     ?>
-    <div class="prof"><img src="<?php echo $row->src ?>"></div>
+            <img src="<?php echo $row->src ?>" class="prof">
         <? } ?>
     <div class="panel-bar">
         <ul>
