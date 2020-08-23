@@ -105,6 +105,9 @@
     #password {
         margin: 10px 40px;
     }
+    #age {
+        margin: 10px 40px;
+    }
     #adminname {
         margin: 50px 40px;
     }
@@ -162,6 +165,9 @@
         margin: 80px 200px;
     }
     #password {
+        margin: 10px 40px;
+    }
+    #age {
         margin: 10px 40px;
     }
     .adminadd {
@@ -237,6 +243,9 @@
         margin: 50px 30px;
     }
     #password {
+        margin: 10px 30px;
+    }
+    #age {
         margin: 10px 30px;
     }
     .img-back {

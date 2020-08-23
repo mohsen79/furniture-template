@@ -239,91 +239,133 @@ if (isset($_GET["id"])) {
     $id = $_GET["id"];
     $sql = "DELETE FROM `main menu` WHERE id=:id";
     $result = $connect->prepare($sql);
-    $result->bindparam(":id",$id);
+    $result->bindparam(":id", $id);
     $result->execute();
     if ($result) {
         header("location:edit.php");
         echo "right";
-    }
-    else{
+    } else {
         echo "error";
-    }   
+    }
 }
 
 // main picture delete 
-if(isset($_GET["id"])){
-    $id2=$_GET["id"];
+if (isset($_GET["id"])) {
+    $id2 = $_GET["id"];
     $sql2 = "DELETE FROM `main picture` WHERE id=:id";
     $result2 = $connect->prepare($sql2);
-    $result2->bindparam(":id",$id2);
+    $result2->bindparam(":id", $id2);
     $result2->execute();
     if ($result2) {
         header("location:edit.php");
         echo "right";
-    }
-    else{
+    } else {
         echo "error";
-    }  
+    }
 }
 
 // fade menu1 delete
-if(isset($_GET["id"])){
-    $id3=$_GET["id"];
+if (isset($_GET["id"])) {
+    $id3 = $_GET["id"];
     $sql3 = "DELETE FROM `fade menu1` WHERE id=:id";
-    $result3= $connect->prepare($sql3);
-    $result3->bindparam(":id",$id3);
+    $result3 = $connect->prepare($sql3);
+    $result3->bindparam(":id", $id3);
     $result3->execute();
     if ($result3) {
         header("location:edit.php");
         echo "right";
-    }
-    else{
+    } else {
         echo "error";
-    }  
+    }
 }
 // fade menu2 delete 
-if(isset($_GET["id"])){
-    $id4=$_GET["id"];
+if (isset($_GET["id"])) {
+    $id4 = $_GET["id"];
     $sql4 = "DELETE FROM `fade menu2` WHERE id=:id";
-    $result4= $connect->prepare($sql4);
-    $result4->bindparam(":id",$id4);
+    $result4 = $connect->prepare($sql4);
+    $result4->bindparam(":id", $id4);
     $result4->execute();
     if ($result4) {
         header("location:edit.php");
         echo "right";
-    }
-    else{
+    } else {
         echo "error";
-    }  
+    }
 }
 
 // slider delete 
-if(isset($_GET["id"])){
-    $id5=$_GET["id"];
+if (isset($_GET["id"])) {
+    $id5 = $_GET["id"];
     $sql5 = "DELETE FROM `slider` WHERE id=:id";
-    $result5= $connect->prepare($sql5);
-    $result5->bindparam(":id",$id5);
+    $result5 = $connect->prepare($sql5);
+    $result5->bindparam(":id", $id5);
     $result5->execute();
     if ($result5) {
         header("location:edit.php");
         echo "right";
-    }
-    else{
+    } else {
         echo "error";
-    }  
+    }
 }
 // menu time 
-if(isset($_GET["id"])){
-    $id6=$_GET["id"];
+if (isset($_GET["id"])) {
+    $id6 = $_GET["id"];
     $sql6 = "DELETE FROM `menu time` WHERE id=:id";
-    $result6= $connect->prepare($sql6);
-    $result6->bindparam(":id",$id6);
+    $result6 = $connect->prepare($sql6);
+    $result6->bindparam(":id", $id6);
     $result6->execute();
     if ($result6) {
         header("location:edit.php");
         echo "right";
-    }
-    else{
+    } else {
         echo "error";
-    }  
+    }
+}
+
+// sign up
+if (isset($_POST["signup"])) {
+    if (empty($_POST["username"]) || empty($_POST["pas"]) || empty($_POST["age"])) {
+        echo "<script>alert('fill all the inputs')</script>";
+    } else {
+        $username = $_POST["username"];
+        $pas = $_POST["pas"];
+        $age = $_POST["age"];
+        $sql7 = "INSERT INTO `sign up` (username,pas,age) VALUES ('$username','$pas','$age')";
+        $result7 = $connect->prepare($sql7);
+        $result7->execute();
+        if ($result7) {
+            header("location:main.php?oklogup=1");
+            exit;
+        } else {
+            header("location:main.php?errorlogup=2");
+            exit;
+        }
+    }
+}
+
+// sign in 
+if (isset($_POST["signin"])) {
+    if (empty($_POST["username"]) || empty($_POST["pas"])) {
+        echo "<script>alert('fill all the inputs')</script>";
+    } else {
+        $username = $_POST["username"];
+        $pas = $_POST["pas"];
+        $sql = "SELECT * FROM `sign up` WHERE `username`=?";
+        $result = $connect->prepare($sql);
+        $result->bindvalue(1, $username);
+        $result->execute();
+        $row = $result->fetch(PDO::FETCH_ASSOC);
+        if ($result) {
+
+            if ($row["pas"] == $pas) {
+                setcookie("member","ADMIN", time() + (86400 * 7));
+                header("location:main.php?oklogin=".$row["username"]);
+                exit;
+            } else {
+                echo "<script>alert('WRONG')</script>";
+            }
+        } else {
+            echo "<script>alert('WRONG')</script>";
+        }
+    }
 }

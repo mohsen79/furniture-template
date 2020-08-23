@@ -426,6 +426,15 @@ body:hover .menu-time img {
     background: rgb(103, 212, 194)
 }
 
+#age {
+    max-width: 80%;
+    width: 450px;
+    height: 40px;
+    margin: 10px 50px;
+    border-radius: 5px;
+    background: rgb(103, 212, 194)
+}
+
 #back {
     max-width: 30%;
     width: 150px;
@@ -885,4 +894,20 @@ fieldset input {
 .edit-back {
     float: right;
     margin: 0 50px;
+}
+
+
+/* sign up page */
+
+.acount {
+    color: rgb(3, 1, 3);
+    padding: 50px;
+}
+
+.sign-up {
+    max-width: 40%;
+    height: 420px;
+    background: rgba(40, 4, 124, 0.733);
+    margin: 80px 400px;
+    border-radius: 8px;
 }
