@@ -29,14 +29,19 @@
                     <li>contact us</li>
                 </a>
             </ul>
+            <i class="fas fa-lightbulb" id="light" data="off"></i><i class="fa fa-search" id="search-icon" data="close"></i>
+            <i class="fas fa-bars" id="bars" data="close"></i>
             <?php
             if (isset($_COOKIE["member"])) {
                 $adminname = $_GET["oklogin"];
-            }
             ?>
-                <div class="log"><a href="logup.php"><?php echo $adminname ?></a></div>
-            <i class="fas fa-lightbulb" id="light" data="off"></i><i class="fa fa-search" id="search-icon" data="close"></i>
-            <i class="fas fa-bars" id="bars" data="close"></i>
+                <div class="log">wellcome <?php echo $adminname ?></div>
+                <div class="logout"><a href="backend.php?logout=0" class="logout-btn">log out</a></div>
+            <?php } else {
+            ?>
+                <div class="log"><a href="logup.php">sign up/sign in</a></div>
+            <?php
+            } ?>
         </div>
         <div class="res-menu">
             <form name="act2">
@@ -126,7 +131,7 @@ if (isset($_GET["errorlogup"])) {
     echo "<script>alert('ERROR')</script>";
 }
 if (isset($_GET["oklogin"])) {
-    echo "<script>alert('wellcome')</script>";
+    echo "<script>alert('wellcome dear $adminname')</script>";
 }
 
 ?>

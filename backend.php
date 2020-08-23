@@ -358,8 +358,8 @@ if (isset($_POST["signin"])) {
         if ($result) {
 
             if ($row["pas"] == $pas) {
-                setcookie("member","ADMIN", time() + (86400 * 7));
-                header("location:main.php?oklogin=".$row["username"]);
+                setcookie("member", "ADMIN", time() + (86400 * 7));
+                header("location:main.php?oklogin=" . $row["username"]);
                 exit;
             } else {
                 echo "<script>alert('WRONG')</script>";
@@ -367,5 +367,76 @@ if (isset($_POST["signin"])) {
         } else {
             echo "<script>alert('WRONG')</script>";
         }
+    }
+}
+if (isset($_GET["logout"])) {
+    setcookie("member", "ADMIN", time() - (86400 * 7));
+    header("location:main.php");
+    exit;
+}
+
+if (isset($_POST["addadmin-btn"])) {
+    $adminname = $_POST["adminname"];
+    $adminpas = $_POST["adminpas"];
+    $adminage = $_POST["adminage"];
+    $src = $_POST["adminsrc"];
+    if (empty($adminname) || empty($adminpas) || empty($adminage) || empty($src)) {
+        echo "<script>alert('fill all the inputs')</script>";
+    } else {
+        $sql = "INSERT INTO `admin` (username,pas,age,src) VALUES ('$adminname' , '$adminpas' , '$adminage' , '$src')";
+        $result = $connect->prepare($sql);
+        $result->execute();
+        if ($result) {
+            echo "<script>alert('admin added successfully')</script>";
+        } else {
+            echo "<script>alert('ERROR')</script>";
+        }
+    }
+}
+
+// members edit
+if (isset($_GET["id"])) {
+    $id = $_GET["id"];
+    $sql = "DELETE FROM `admin` WHERE id=:id";
+    $result = $connect->prepare($sql);
+    $result->bindparam(":id", $id);
+    $result->execute();
+    if ($result) {
+        header("location:members.php");
+        echo "right";
+    } else {
+        echo "error";
+    }
+}
+ 
+if (isset($_GET["id"])) {
+    $id = $_GET["id"];
+    $sql = "DELETE FROM `sign up` WHERE id=:id";
+    $result = $connect->prepare($sql);
+    $result->bindparam(":id", $id);
+    $result->execute();
+    if ($result) {
+        header("location:members.php");
+        echo "right";
+    } else {
+        echo "error";
+    }
+}
+
+// admin photo
+if(isset($_POST["adminbtn"])){
+    $filename = $_FILES["adminupload"]["name"];
+    $fildetmp = $_FILES["adminupload"]["tmp_name"];
+    if(is_uploaded_file($fildetmp)){
+        if(move_uploaded_file($fildetmp,$filename)){
+            $address = (stream_resolve_include_path($filename));
+            echo "<script>alert('the photo address : " . $address . "')</script>";
+            header("refresh:0");
+            exit;
+        }
+    } else{
+        header("location:adminadd.php?error");
+        echo "error";
+        exit;
     }
 }
