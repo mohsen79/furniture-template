@@ -27,7 +27,7 @@
                 <td><?php echo $row10->username ?></td>
                 <td><?php echo $row10->pas ?></td>
                 <td><?php echo $row10->age ?></td>
-                <td class="ed2">edit</td>
+                <td class="ed2"><a href="adminedit.php?adminid=<?php echo $row10->id ?>">edit</a></td>
                 <td class="del"><a href="backend.php?id=<?php echo $row10->id ?>">delete</a></td>
             </tr>
             <? } ?>

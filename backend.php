@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 include_once "connection.php";
 
 
@@ -201,8 +202,8 @@ if (isset($_POST["send-btn3"])) {
         $filetemp2 = $_FILES["time-input3"]["tmp_name"];
         if (is_uploaded_file($filetemp2)) {
             if (move_uploaded_file($filetemp2, $filename2)) {
-                $address = (stream_resolve_include_path($filename2));
-                echo "<script>alert('the photo address : " . $address . "')</script>";
+                // $address = (stream_resolve_include_path($filename2));
+                echo "<script>alert('the photo address : " . $filename . "')</script>";
                 header("refresh:0");
             } else {
                 header("location:edit.php?error15=5");
@@ -354,18 +355,36 @@ if (isset($_POST["signin"])) {
         $result = $connect->prepare($sql);
         $result->bindvalue(1, $username);
         $result->execute();
-        $row = $result->fetch(PDO::FETCH_ASSOC);
+        $sql2 = "SELECT * FROM `admin` WHERE `username`=?";
+        $result2 = $connect->prepare($sql2);
+        $result2->bindvalue(1, $username);
+        $result2->execute();
         if ($result) {
-
+            $row = $result->fetch(PDO::FETCH_ASSOC);
             if ($row["pas"] == $pas) {
+                $_SESSION["adminname"] = $row["username"];
+                $_SESSION["adminpas"] = $row["pas"];
+                $_SESSION["adminsrc"] = $row["src"];
                 setcookie("member", "ADMIN", time() + (86400 * 7));
-                header("location:main.php?oklogin=" . $row["username"]);
+                header("location:main.php?oklogin");
+                // header("location:main.php?oklogin=" . $row["username"]);
                 exit;
             } else {
                 echo "<script>alert('WRONG')</script>";
             }
-        } else {
-            echo "<script>alert('WRONG')</script>";
+        }
+        if ($result2) {
+            $row2 = $result2->fetch(PDO::FETCH_ASSOC);
+            if ($row2["pas"] == $pas) {
+                $_SESSION["adminname"] = $row2["username"];
+                $_SESSION["adminpas"] = $row2["pas"];
+                $_SESSION["adminage"] = $row2["age"];
+                $_SESSION["adminsrc"] = $row2["src"];
+                setcookie("member", "ADMIN", time() + (86400 * 7));
+                header("location:panel.php?oklogin");
+                // header("location:main.php?oklogin=" . $row["username"]);
+                exit;
+            }
         }
     }
 }
@@ -408,7 +427,7 @@ if (isset($_GET["id"])) {
         echo "error";
     }
 }
- 
+
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
     $sql = "DELETE FROM `sign up` WHERE id=:id";
@@ -424,19 +443,38 @@ if (isset($_GET["id"])) {
 }
 
 // admin photo
-if(isset($_POST["adminbtn"])){
+if (isset($_POST["adminbtn"])) {
     $filename = $_FILES["adminupload"]["name"];
     $fildetmp = $_FILES["adminupload"]["tmp_name"];
-    if(is_uploaded_file($fildetmp)){
-        if(move_uploaded_file($fildetmp,$filename)){
-            $address = (stream_resolve_include_path($filename));
-            echo "<script>alert('the photo address : " . $address . "')</script>";
+    if (is_uploaded_file($fildetmp)) {
+        if (move_uploaded_file($fildetmp, $filename)) {
+            // $address = (stream_resolve_include_path($filename));
+            echo "<script>alert('the photo address : " . $filename . "')</script>";
             header("refresh:0");
             exit;
         }
-    } else{
+    } else {
         header("location:adminadd.php?error");
         echo "error";
         exit;
+    }
+}
+
+// admin edit 
+if (isset($_POST["adminedit-btn"])) {
+    try {
+        global $adminid;
+        $username = $_POST["adminnameedit"];
+        $pas = $_POST["adminpasedit"];
+        $age = $_POST["adminageedit"];
+        $src = $_POST["adminsrcedit"];
+        $sql = "UPDATE `admin` SET username='$username' , pas='$pas' , age='$age' , src='$src' WHERE id=$adminid ";
+        $result = $connect->prepare($sql);
+        $result->execute();
+        if ($result) {
+            header("location:members.php");
+        }
+    } catch (PDOException $err) {
+        echo $err->getMessage();
     }
 }

@@ -33,15 +33,19 @@
             <i class="fas fa-bars" id="bars" data="close"></i>
             <?php
             if (isset($_COOKIE["member"])) {
-                $adminname = $_GET["oklogin"];
             ?>
-                <div class="log">wellcome <?php echo $adminname ?></div>
+                <div class="log">wellcome <?php echo $_SESSION["adminname"] ?></div>
                 <div class="logout"><a href="backend.php?logout=0" class="logout-btn">log out</a></div>
             <?php } else {
             ?>
                 <div class="log"><a href="logup.php">sign up/sign in</a></div>
             <?php
-            } ?>
+            } 
+                if(isset($_GET["adminout"])){
+                    setcookie("member", "ADMIN", time() - (86400 * 7));
+                    header("location:main.php");
+                }
+            ?>
         </div>
         <div class="res-menu">
             <form name="act2">
@@ -131,7 +135,6 @@ if (isset($_GET["errorlogup"])) {
     echo "<script>alert('ERROR')</script>";
 }
 if (isset($_GET["oklogin"])) {
-    echo "<script>alert('wellcome dear $adminname')</script>";
+    echo "<script>alert('wellcome dear $_SESSION[adminname]')</script>";
 }
-
 ?>

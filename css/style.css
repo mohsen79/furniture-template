@@ -538,7 +538,7 @@ body:hover .menu-time img {
 .pftxt {
     max-width: 400px;
     height: 200px;
-    background: rgb(140, 0, 255);
+    border: 2px solid green;
     margin-right: 400px;
     margin-top: 450px;
     margin-left: 500px;
@@ -621,6 +621,15 @@ body:hover .menu-time img {
     background: transparent;
 }
 
+.ed2:hover {
+    background: yellow;
+}
+
+.ed2 a {
+    color: black;
+    background: transparent;
+}
+
 .back2 {
     width: 200px;
     height: 30px;
@@ -636,6 +645,14 @@ body:hover .menu-time img {
 /* add admin */
 
 .adminadd {
+    max-width: 40%;
+    height: 550px;
+    background: rgb(69, 88, 255);
+    margin: 0px auto;
+    border-radius: 8px;
+}
+
+.adminedit {
     max-width: 40%;
     height: 550px;
     background: rgb(69, 88, 255);

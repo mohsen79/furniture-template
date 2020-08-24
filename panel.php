@@ -1,26 +1,18 @@
 <html>
-
+<?php   session_start(); ?>
 <head>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="responsive.css">
 </head>
 
 <body>
-    <h2 class="h2">wellcome dear mohsen</h2>
-    <a href="main.php" class="out">
+    <h2 class="h2">wellcome dear <?php echo $_SESSION["adminname"] ;?></h2>
+    <a href="main.php?adminout" class="out">
         <ul>
             <li>log out</li>
         </ul>
     </a>
-    <?php
-        require "connection.php";
-        $sql = "SELECT * FROM `admin`";
-        $result = $connect->prepare($sql);
-        $result->execute();
-        while($row=$result->fetch(PDO::FETCH_OBJ)){
-    ?>
-            <img src="<?php echo $row->src ?>" class="prof">
-        <? } ?>
+            <img src="<?php echo $_SESSION["adminsrc"] ?>" class="prof">
     <div class="panel-bar">
         <ul>
             <a href="main.php">
@@ -37,7 +29,11 @@
             </a>
         </ul>
     </div>
-    <div class="pftxt"></div>
+    <div class="pftxt">
+        name : <?php echo $_SESSION["adminname"]; ?><br><br>
+        password : <?php echo $_SESSION["adminpas"];?><br><br>
+        age : <?php echo $_SESSION["adminage"];?>
+    </div>
 </body>
 
 </html>
