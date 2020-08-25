@@ -22,12 +22,18 @@
         <div id="result"></div>
         <div class="menu">
             <ul class="li">
+            <?php
+                require "connection.php";
+                $sql2 = "SELECT * FROM `main menu`";
+                $result2 = $connect->prepare($sql2);
+                $result2->execute();
+                while ($row2 = $result2->fetch(PDO::FETCH_OBJ)) {
+
+                ?>
                 <a href="main.php">
-                    <li>home</li>
+                    <li><?php echo $row2->title ?></li>
                 </a>
-                <a href="contact.php">
-                    <li>contact us</li>
-                </a>
+                <? } ?>
             </ul>
             <i class="fas fa-lightbulb" id="light" data="off"></i><i class="fa fa-search" id="search-icon" data="close"></i>
             <i class="fas fa-bars" id="bars" data="close"></i>
@@ -40,11 +46,11 @@
             ?>
                 <div class="log"><a href="logup.php">sign up/sign in</a></div>
             <?php
-            } 
-                if(isset($_GET["adminout"])){
-                    setcookie("member", "ADMIN", time() - (86400 * 7));
-                    header("location:main.php");
-                }
+            }
+            if (isset($_GET["adminout"])) {
+                setcookie("member", "ADMIN", time() - (86400 * 7));
+                header("location:main.php");
+            }
             ?>
         </div>
         <div class="res-menu">
@@ -53,37 +59,107 @@
             </form>
             <div id="result2"></div>
             <ul class="li2">
-                <a href="main.php">
-                    <li>home</li>
-                </a>
-                <a href="contact.php">
-                    <li>contact us</li>
-                </a>
+                <?php
+                require "connection.php";
+                $sql2 = "SELECT * FROM `main menu`";
+                $result2 = $connect->prepare($sql2);
+                $result2->execute();
+                while ($row2 = $result2->fetch(PDO::FETCH_OBJ)) {
+
+                ?>
+                    <a href="main.php">
+                        <li><?php echo $row2->title ?></li>
+                    </a>
+                <?php } ?>
             </ul>
         </div>
     </div>
-    <img class="main-pic" src="img/main.jpg">
+    <?php
+
+    require "connection.php";
+    $sql = "SELECT * FROM `main picture`";
+    $result = $connect->prepare($sql);
+    $result->execute();
+    while ($row = $result->fetch(PDO::FETCH_OBJ)) {
+
+    ?>
+        <img class="main-pic" src="<?php echo $row->src ?>">
+    <?php } ?>
     <div class="main-back"></div>
     <div class="fade-menu">
         <div class="top-menu">
             <ul class="fade-menu-li">
-                <li><a href="#steel">steel furniture</a></li>
-                <li><a href="#comfortable">comfortable furniture</a></li>
+            <?php
+                require "connection.php";
+                $sql2 = "SELECT * FROM `fade menu1`";
+                $result2 = $connect->prepare($sql2);
+                $result2->execute();
+                while ($row2 = $result2->fetch(PDO::FETCH_OBJ)) {
+
+                ?>
+                <li><a href="#steel"><?php echo $row2->title ?></a></li>
+                <? }
+                require "connection.php";
+                $sql2 = "SELECT * FROM `fade menu2`";
+                $result2 = $connect->prepare($sql2);
+                $result2->execute();
+                  while ($row2 = $result2->fetch(PDO::FETCH_OBJ)) {
+                ?>
+
+                <li><a href="#comfortable"><?php echo $row2->title ?></a></li>
+                <?php } ?>
             </ul>
         </div>
         <div class="sel" id="steel">
-            <div><img src="img/fade2.jpg"></div>
+            <?php
+            $sql2 = "SELECT * FROM `fade menu1`";
+            $result2 = $connect->prepare($sql2);
+            $result2->execute();
+            while ($row2 = $result2->fetch(PDO::FETCH_OBJ)) {
+                ?>
+            <div><img src="<?php echo $row2->src ?>"></div>
+            <?php } ?>
             <div>
                 <div class="fade-txt">
-                    <p class="p">steel market</p>
+                    <?php
+
+                require "connection.php";
+                $sql2 = "SELECT * FROM `fade menu1`";
+                $result2 = $connect->prepare($sql2);
+                $result2->execute();
+                while ($row2 = $result2->fetch(PDO::FETCH_OBJ)) {
+
+                ?>
+                    <p class="p"><?php echo $row2->content ?></p>
+                <?php } ?>
                 </div>
             </div>
         </div>
         <div class="sel" id="comfortable">
-            <div><img src="img/fade1.jpg"></div>
+        <?php
+
+            require "connection.php";
+            $sql2 = "SELECT * FROM `fade menu2`";
+            $result2 = $connect->prepare($sql2);
+            $result2->execute();
+            while ($row2 = $result2->fetch(PDO::FETCH_OBJ)) {
+
+        ?>
+            <div><img src="<?php echo $row2->src ?>"></div>
+            <?php } ?>
             <div>
                 <div class="fade-txt">
-                    <p class="p">comfortable market</p>
+                <?php
+
+                require "connection.php";
+                $sql2 = "SELECT * FROM `fade menu2`";
+                $result2 = $connect->prepare($sql2);
+                $result2->execute();
+                while ($row2 = $result2->fetch(PDO::FETCH_OBJ)) {
+
+                ?>
+                    <p class="p"><?php echo $row2->content ?></p>
+                <?php } ?>
                 </div>
             </div>
         </div>
@@ -91,10 +167,17 @@
     <div class="slide-all">
         <div class="slide-box">
             <div class="slide">
-                <div class="img-box"><img src="img/slide1.jpg"></div>
-                <div class="img-box"><img src="img/slide2.jpg"></div>
-                <div class="img-box"><img src="img/slide3.jpg"></div>
-                <div class="img-box"><img src="img/slide4.jpg"></div>
+            <?php
+                    $sql2 = "SELECT * FROM `slider`";
+                    $result2 = $connect->prepare($sql2);
+                    $result2->execute();
+                    while ($row2 = $result2->fetch(PDO::FETCH_OBJ)) {
+                    ?>
+                <div class="img-box">
+                    <img src="<?php echo $row2->src ?>">
+            </div>
+            <?php } ?>
+
             </div>
         </div>
         <div class="next"></div>
@@ -102,24 +185,16 @@
     </div>
     <div class="menu-time">
         <ul>
+        <?php              
+            $sql2 = "SELECT * FROM `menu time`";
+            $result2 = $connect->prepare($sql2);
+            $result2->execute();
+            while ($row2 = $result2->fetch(PDO::FETCH_OBJ)) {
+            ?>
             <div class="menu-time2">
-                <li><img src="img/time1.jpg"></li>
+                <a href="show.php?photoid=<?php echo $row2->id ?>"><li><img src="<?php echo $row2->src ?>"></li></a>
             </div>
-            <div class="menu-time2">
-                <li><img src="img/time2.jpg"></li>
-            </div>
-            <div class="menu-time2">
-                <li><img src="img/time3.jpg"></li>
-            </div>
-            <div class="menu-time2">
-                <li><img src="img/time4.jpg"></li>
-            </div>
-            <div class="menu-time2">
-                <li><img src="img/time5.jpg"></li>
-            </div>
-            <div class="menu-time2">
-                <li><img src="img/time6.jpg"></li>
-            </div>
+            <? } ?>
         </ul>
     </div>
 

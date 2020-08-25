@@ -36,8 +36,8 @@ if (isset($_POST["send-photo"])) {
             if (move_uploaded_file($filetemp, $filename)) {
                 // "file has been uploaded successfully<br>";
                 //  echo "<a href='".$filename."'> file address </a>";
-                $address = (stream_resolve_include_path($filename));
-                echo "<script>alert('the photo address : " . $address . "')</script>";
+                // $address = (stream_resolve_include_path($filename));
+                echo "<script>alert('the photo address : " . $filename . "')</script>";
             } else {
                 header("location:edit.php?error2=5");
                 exit;
@@ -75,8 +75,8 @@ if (isset($_POST["fade-pic-btn"])) {
         $filetemp2 = $_FILES["fade-pic"]["tmp_name"];
         if (is_uploaded_file($filetemp2)) {
             if (move_uploaded_file($filetemp2, $filename2)) {
-                $address = (stream_resolve_include_path($filename2));
-                echo "<script>alert('the photo address : " . $address . "')</script>";
+                // $address = (stream_resolve_include_path($filename2));
+                echo "<script>alert('the photo address : " . $filename2 . "')</script>";
                 header("refresh:0");
             } else {
                 header("location:edit.php?error7=5");
@@ -118,8 +118,8 @@ if (isset($_POST["fade-pic-btn2"])) {
         $filetemp2 = $_FILES["fade-pic2"]["tmp_name"];
         if (is_uploaded_file($filetemp2)) {
             if (move_uploaded_file($filetemp2, $filename2)) {
-                $address = (stream_resolve_include_path($filename2));
-                echo "<script>alert('the photo address : " . $address . "')</script>";
+                // $address = (stream_resolve_include_path($filename2));
+                echo "<script>alert('the photo address : " . $filename2 . "')</script>";
                 header("refresh:0");
             } else {
                 header("location:edit.php?error7=5");
@@ -161,8 +161,8 @@ if (isset($_POST["send-photo2"])) {
         $filetemp2 = $_FILES["pic-input2"]["tmp_name"];
         if (is_uploaded_file($filetemp2)) {
             if (move_uploaded_file($filetemp2, $filename2)) {
-                $address = (stream_resolve_include_path($filename2));
-                echo "<script>alert('the photo address : " . $address . "')</script>";
+                // $address = (stream_resolve_include_path($filename2));
+                echo "<script>alert('the photo address : " . $filename2 . "')</script>";
                 header("refresh:0");
             } else {
                 header("location:edit.php?error6=5");
@@ -203,7 +203,7 @@ if (isset($_POST["send-btn3"])) {
         if (is_uploaded_file($filetemp2)) {
             if (move_uploaded_file($filetemp2, $filename2)) {
                 // $address = (stream_resolve_include_path($filename2));
-                echo "<script>alert('the photo address : " . $filename . "')</script>";
+                echo "<script>alert('the photo address : " . $filename2 . "')</script>";
                 header("refresh:0");
             } else {
                 header("location:edit.php?error15=5");
@@ -213,15 +213,17 @@ if (isset($_POST["send-btn3"])) {
     }
 }
 
-/* upload time menu picture */
+
+/* upload time menu picture and content */
 
 if (isset($_POST["upload-btn3"])) {
-    if (empty($_POST["time-src"])) {
+    if (empty($_POST["time-src"]) || empty($_POST["menu-time-content"])) {
         header("location:edit.php?empty16=7");
         exit;
     } else {
         $src = $_POST["time-src"];
-        $ins = "INSERT INTO `menu time` (src) VALUES ('$src')";
+        $content = $_POST["menu-time-content"];
+        $ins = "INSERT INTO `menu time` (src,content) VALUES ('$src' , '$content')";
         $result = $connect->prepare($ins);
         $result->execute();
     }
@@ -414,8 +416,8 @@ if (isset($_POST["addadmin-btn"])) {
 }
 
 // members edit
-if (isset($_GET["id"])) {
-    $id = $_GET["id"];
+if (isset($_GET["admindelid"])) {
+    $id = $_GET["admindelid"];
     $sql = "DELETE FROM `admin` WHERE id=:id";
     $result = $connect->prepare($sql);
     $result->bindparam(":id", $id);
@@ -428,8 +430,8 @@ if (isset($_GET["id"])) {
     }
 }
 
-if (isset($_GET["id"])) {
-    $id = $_GET["id"];
+if (isset($_GET["memberdelid"])) {
+    $id = $_GET["memberdelid"];
     $sql = "DELETE FROM `sign up` WHERE id=:id";
     $result = $connect->prepare($sql);
     $result->bindparam(":id", $id);
@@ -473,6 +475,79 @@ if (isset($_POST["adminedit-btn"])) {
         $result->execute();
         if ($result) {
             header("location:members.php");
+        }
+    } catch (PDOException $err) {
+        echo $err->getMessage();
+    }
+}
+
+// member edit
+
+if (isset($_POST["memberedit-btn"])) {
+    try {
+        global $memberid;
+        $username = $_POST["membernameedit"];
+        $pas = $_POST["memberpasedit"];
+        $age = $_POST["memberageedit"];
+        $sql = "UPDATE `sign up` SET username='$username' , pas='$pas' , age='$age' WHERE id=$memberid ";
+        $result = $connect->prepare($sql);
+        $result->execute();
+        if ($result) {
+            header("location:members.php");
+        }
+    } catch (PDOException $err) {
+        echo $err->getMessage();
+    }
+}
+
+// section 1 edit
+
+if (isset($_POST["section1-btn"])) {
+    try {
+        global $section1id;
+        $title = $_POST["section1-title"];
+        $content = $_POST["section1-content"];
+        $src = $_POST["section1-src"];
+        $sql = "UPDATE `fade menu1` SET title='$title' , content='$content' , src='$src' WHERE id=$section1id ";
+        $result = $connect->prepare($sql);
+        $result->execute();
+        if ($result) {
+            header("location:edit.php");
+        }
+    } catch (PDOException $err) {
+        echo $err->getMessage();
+    }
+}
+
+// section 2 edit
+if (isset($_POST["section2-btn"])) {
+    try {
+        global $section2id;
+        $title = $_POST["section2-title"];
+        $content = $_POST["section2-content"];
+        $src = $_POST["section2-src"];
+        $sql = "UPDATE `fade menu2` SET title='$title' , content='$content' , src='$src' WHERE id=$section2id ";
+        $result = $connect->prepare($sql);
+        $result->execute();
+        if ($result) {
+            header("location:edit.php");
+        }
+    } catch (PDOException $err) {
+        echo $err->getMessage();
+    }
+}
+
+// menu time edit
+if (isset($_POST["menu-time-btn"])) {
+    try {
+        global $menutimeid;
+        $content = $_POST["menu-time-content"];
+        $src = $_POST["menu-time-src"];
+        $sql = "UPDATE `menu time` SET content='$content' , src='$src' WHERE id=$menutimeid ";
+        $result = $connect->prepare($sql);
+        $result->execute();
+        if ($result) {
+            header("location:edit.php");
         }
     } catch (PDOException $err) {
         echo $err->getMessage();

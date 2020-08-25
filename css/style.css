@@ -487,14 +487,10 @@ body:hover .menu-time img {
 }
 
 .show-text {
-    width: 80%;
+    width: 63%;
     height: 100px;
-    margin: 5px 50px;
+    margin: auto;
     word-wrap: break-word;
-}
-
-.show-text {
-    padding: 1%;
 }
 
 
@@ -655,6 +651,14 @@ body:hover .menu-time img {
 .adminedit {
     max-width: 40%;
     height: 550px;
+    background: rgb(69, 88, 255);
+    margin: 0px auto;
+    border-radius: 8px;
+}
+
+.memberedit {
+    max-width: 40%;
+    height: 400px;
     background: rgb(69, 88, 255);
     margin: 0px auto;
     border-radius: 8px;
@@ -957,4 +961,40 @@ fieldset input {
 .logout-btn {
     float: right;
     margin: -10px 70px;
+}
+
+
+/* section1 edit */
+
+.section1-title {
+    width: 350px;
+    height: 50px;
+    margin: 30px auto;
+    color: green;
+}
+
+.section1 {
+    max-width: 40%;
+    height: 400px;
+    background: rgba(40, 4, 124, 0.733);
+    margin: 80px 400px;
+    border-radius: 8px;
+}
+
+
+/* section 2 edit */
+
+.section2-title {
+    width: 350px;
+    height: 50px;
+    margin: 30px auto;
+    color: green;
+}
+
+.section2 {
+    max-width: 40%;
+    height: 400px;
+    background: rgba(40, 4, 124, 0.733);
+    margin: 80px 400px;
+    border-radius: 8px;
 }

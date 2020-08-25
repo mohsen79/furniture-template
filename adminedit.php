@@ -28,7 +28,7 @@
                 <input type="text" name="adminsrcedit" placeholder="src" id="adminpassword" value="<?php echo $row->src ?>"><br><br><br>
                 <input type="number" name="adminageedit" placeholder="age" id="adminpassword" value="<?php echo $row->age ?>">
             <?php } ?>
-            <a href="panel.php"><input type="button" id="back" value="BACK"></a>
+            <a href="members.php"><input type="button" id="back" value="BACK"></a>
             <input type="submit" id="add" value="UPDATE" name="adminedit-btn">
         </form>
     </div>

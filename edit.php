@@ -65,6 +65,7 @@
             <tr>
                 <th style="width:100px">title</th>
                 <td><?php echo $row3->title ?></td>
+                <td class="ed2" rowspan="3px"><a href="section1-edit.php?section1id=<?php echo $row3->id ?>">edit</a></td>
                 <td style="width:100px" class="del" rowspan="3px"><a href="backend.php?id=<?php echo $row3->id; ?> ">delete</a></td>
             </tr>
             <tr>
@@ -91,6 +92,7 @@
                 <tr>
                     <th style="width:100px">title</th>
                     <td id="td"><?php echo $row4->title; ?></td>
+                    <td class="ed2" rowspan="3px"><a href="section2-edit.php?section2id=<?php echo $row4->id ?>">edit</a></td>
                     <td style="width:100px" class="del" rowspan="3px"><a href="backend.php?id=<?php echo $row4->id; ?> ">delete</a></td>
                 </tr>
                 <tr>
@@ -128,7 +130,9 @@
         <table border="3px">
             <legend>menu time photos</legend>
             <tr>
-                <th colspan="3px">src</th>
+                <th>src</th>
+                <th>content</th>
+                <th colspan="3px">change</th>
             </tr>
             <?php
             $sql6 = "SELECT * FROM `menu time`";
@@ -138,6 +142,8 @@
             ?>
                 <tr>
                     <td><?php echo $row6->src ?></td>
+                    <td><?php echo $row6->content ?></td>
+                    <td class="ed2"><a href="menu-time-edit.php?menu-timeid=<?php echo $row6->id ?>">edit</a></td>
                     <td style="width:100px" class="del"><a href="backend.php?id=<?php echo $row6->id; ?> ">delete</a></td>
                 </tr>
             <?php } ?>
@@ -274,7 +280,8 @@
             select a photo :&nbsp&nbsp&nbsp<input type="file" id="edit-mneu-time-pic" name="time-input3">
             <input type="submit" name="send-btn3" value="photo address" id="send-photo3">
             <br><br>
-            src : &nbsp&nbsp <input type="text" id="edit-menu-time-upload" name="time-src"><input type="submit" id="upload-btn3" value="upload" name=upload-btn3>
+            src : &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="edit-menu-time-upload" name="time-src"><input type="submit" id="upload-btn3" value="upload" name=upload-btn3><br><br>
+            content : &nbsp&nbsp<input type="text" name="menu-time-content" >
         </form>
         <?php
         if (isset($_GET["empty15"])) {

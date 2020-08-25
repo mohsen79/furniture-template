@@ -14,7 +14,8 @@
                 <td> USERNAME </td>
                 <td>PASSWORD</td>
                 <td>AGE</td>
-                <td colspan="2px">CHANGE</td>
+                <td>SRC</td>
+                <td colspan="3px">CHANGE</td>
             </tr>
                 <?Php
                 require "connection.php" ;
@@ -27,8 +28,9 @@
                 <td><?php echo $row10->username ?></td>
                 <td><?php echo $row10->pas ?></td>
                 <td><?php echo $row10->age ?></td>
+                <td><?php echo $row10->src ?></td>
                 <td class="ed2"><a href="adminedit.php?adminid=<?php echo $row10->id ?>">edit</a></td>
-                <td class="del"><a href="backend.php?id=<?php echo $row10->id ?>">delete</a></td>
+                <td class="del"><a href="backend.php?admindelid=<?php echo $row10->id ?>">delete</a></td>
             </tr>
             <? } ?>
         </table>
@@ -54,8 +56,8 @@
                 <td><?php echo $row->username ?></td>
                 <td><?php echo $row->pas ?></td>
                 <td><?php echo $row->age ?></td>
-                <td class="ed2">edit</td>
-                <td class="del"><a href="backend.php?id=<?php echo $row->id ?>">delete</a></td>
+                <td class="ed2"><a href="memberedit.php?memberid=<?php echo $row->id ?>">edit</a></td>
+                <td class="del"><a href="backend.php?memberdelid=<?php echo $row->id ?>">delete</a></td>
             </tr>
                 <?php } ?>
         </table>
