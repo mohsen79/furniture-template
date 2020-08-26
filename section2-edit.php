@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <title><?php require "title.php" ?></title>
     <?php
     require "connection.php";
     ?>

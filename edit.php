@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <title><?php require "title.php" ?></title>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -10,7 +11,9 @@
 
 <body>
     <h2 class="edit-title">EDIT PAGE</h2>
-    <a href="panel.php"><h2 class="edit-back">panel</h2></a>
+    <a href="panel.php">
+        <h2 class="edit-back">panel</h2>
+    </a>
 
     <div class="tbl-menu">
         <table border="2px">
@@ -202,7 +205,7 @@
             content : &nbsp&nbsp&nbsp <input type="text" id="edit-fademenu-content" name="fade-con1">
             <br><br><br>
             select a photo :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="file" name="fade-pic"><br>
-            src : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="fade-menu-src" name="fade-src1" ><br><br><br>
+            src : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="fade-menu-src" name="fade-src1"><br><br><br>
             <input type="submit" id="fade-menu-ok" value="ok" name="fade-btn1"><input type="submit" name="fade-pic-btn" id="fade-pic" value="photo adress">
         </form>
         <?php
@@ -281,7 +284,7 @@
             <input type="submit" name="send-btn3" value="photo address" id="send-photo3">
             <br><br>
             src : &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="edit-menu-time-upload" name="time-src"><input type="submit" id="upload-btn3" value="upload" name=upload-btn3><br><br>
-            content : &nbsp&nbsp<input type="text" name="menu-time-content" >
+            content : &nbsp&nbsp<input type="text" name="menu-time-content">
         </form>
         <?php
         if (isset($_GET["empty15"])) {

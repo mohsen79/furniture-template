@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <title><?php require "title.php" ?></title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="responsive.css">
 </head>
@@ -9,13 +10,13 @@
 
     <?php
 
-        require "connection.php";
-        $photoid = $_GET["photoid"];
-        $sql = "SELECT * FROM `menu time` WHERE id=?";
-        $result = $connect->prepare($sql);
-        $result->bindvalue(1,$photoid);
-        $result->execute();
-        $row = $result->fetch(PDO::FETCH_OBJ);
+    require "connection.php";
+    $photoid = $_GET["photoid"];
+    $sql = "SELECT * FROM `menu time` WHERE id=?";
+    $result = $connect->prepare($sql);
+    $result->bindvalue(1, $photoid);
+    $result->execute();
+    $row = $result->fetch(PDO::FETCH_OBJ);
 
     ?>
     <h2></h2>

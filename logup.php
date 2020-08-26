@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <title><?php require "title.php" ?></title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="responsive.css">
     <?php require "backend.php"; ?>

@@ -1,5 +1,6 @@
 <html>
 <haed>
+    <title><?php require "title.php" ?></title>
     <?php
     require "backend.php";
     ?>
@@ -17,10 +18,10 @@
     </div>
     <div class="sign-in">
         <form method="post">
-        <input type="text" name="username" placeholder="username" id="username">
-        <input type="password" name="pas" placeholder="password" id="password">
-        <a href="main.php"><input type="button" id="back" value="HOME"></a>
-        <input type="submit" id="enter" value="sign in" name="signin">
+            <input type="text" name="username" placeholder="username" id="username">
+            <input type="password" name="pas" placeholder="password" id="password">
+            <a href="main.php"><input type="button" id="back" value="HOME"></a>
+            <input type="submit" id="enter" value="sign in" name="signin">
         </form>
     </div>
 

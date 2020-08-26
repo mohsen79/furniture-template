@@ -324,24 +324,45 @@ if (isset($_GET["id"])) {
         echo "error";
     }
 }
+// USER EXIST 
+function userexist($username)
+{
+    global $connect;
+    $sql = "SELECT `username` FROM `sign up` WHERE `username`=?";
+    $result = $connect->prepare($sql);
+    $result->bindvalue(1, $username);
+    $result->execute();
+    if ($result->rowCount() < 1) {
+        return false;
+    } else {
+        return $result;
+    }
+}
+
 
 // sign up
 if (isset($_POST["signup"])) {
+    $username = $_POST["username"];
+    $pas = $_POST["pas"];
+    $age = $_POST["age"];
+    $exist = userexist($username);
     if (empty($_POST["username"]) || empty($_POST["pas"]) || empty($_POST["age"])) {
         echo "<script>alert('fill all the inputs')</script>";
     } else {
-        $username = $_POST["username"];
-        $pas = $_POST["pas"];
-        $age = $_POST["age"];
-        $sql7 = "INSERT INTO `sign up` (username,pas,age) VALUES ('$username','$pas','$age')";
-        $result7 = $connect->prepare($sql7);
-        $result7->execute();
-        if ($result7) {
-            header("location:main.php?oklogup=1");
-            exit;
+        if ($exist) {
+            echo "<script>alert('there is a member with the same username')</script>";
+            return false;
         } else {
-            header("location:main.php?errorlogup=2");
-            exit;
+            $sql7 = "INSERT INTO `sign up` (username,pas,age) VALUES ('$username','$pas','$age')";
+            $result7 = $connect->prepare($sql7);
+            $result7->execute();
+            if ($result7) {
+                header("location:main.php?oklogup=1");
+                exit;
+            } else {
+                header("location:main.php?errorlogup=2");
+                exit;
+            }
         }
     }
 }
