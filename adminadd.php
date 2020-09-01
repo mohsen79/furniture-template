@@ -7,7 +7,7 @@
     <?php require "backend.php" ?>
 </head>
 
-<body>
+<body style="background:pink">
 
     <div class="admin-title">
         <h2>ADD AMIN</h2>

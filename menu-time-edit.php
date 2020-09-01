@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/fontawesome-all.css">
 </head>
 
-<body>
+<body style="background:pink">
 
     <div class="section1-title">
         <h2>EDIT MENU TIME</h2>

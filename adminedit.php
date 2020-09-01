@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="responsive.css">
 </head>
 
-<body>
+<body style="background:lightpink">
 
     <div class="admin-title">
         <h2>EDIT AMIN</h2>

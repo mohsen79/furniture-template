@@ -1,5 +1,4 @@
 <html>
-
 <head>  
     <title><?php require "title.php" ?></title>
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -9,11 +8,12 @@
     <link rel="stylesheet" href="css/fontawesome-all.css">
 </head>
 
-<body>
+<body>  
     <?php require "search.php";
     require "backend.php";
     ?>
 
+    <img src="img/back9.png" class="main">
     <div class="all-search-menu">
         <div class="search-back">
             <form name="act">

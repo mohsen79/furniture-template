@@ -90,7 +90,7 @@ $(document).ready(function() {
     });
     window.addEventListener("resize", function() {
         if ($(window).width() > 700) {} else {
-            $(".res-menu").css({ 'right': '-300px', 'display': 'none' });
+            $(".res-menu").css({ 'right': '-500px', 'display': 'none' });
             $(".back-light2").remove();
             $("#bars").show();
         }
@@ -114,7 +114,7 @@ $(document).ready(function() {
             $(".res-menu").hide();
             $(this).remove();
             $(".res-menu").animate({
-                right: -300
+                right: -500
             }, 1000);
         });
     });

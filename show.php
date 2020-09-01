@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="responsive.css">
 </head>
 
-<body>
+<body style="background:lightpink">
 
     <?php
 

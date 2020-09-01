@@ -63,6 +63,9 @@
     .sign-in {
         margin: 80px 300px;
     }
+    .sign-up {
+        margin: 80px 300px;
+    }
     .adminadd {
         margin: 80px 300px;
     }
@@ -89,6 +92,18 @@
     }
     .back2 {
         margin-right: 450px;
+    }
+    .admin-box {
+        margin-left: 200px;
+    }
+    .member-box {
+        margin-left: 200px;
+    }
+    .section1 {
+        margin: 80px 300px;
+    }
+    .section2 {
+        margin: 80px 300px;
     }
 }
 
@@ -145,6 +160,18 @@
     .login-title {
         margin: 30px 370px;
     }
+    .admin-box {
+        margin-left: 200px;
+    }
+    .admin-box table {
+        font-size: 14px;
+    }
+    .member-box {
+        margin-left: 200px;
+    }
+    .member-box table {
+        font-size: 14px;
+    }
 }
 
 @media(max-width:950px) {
@@ -158,9 +185,13 @@
         width: 70%;
     }
     .fade-menu-li li {
-        margin: 0 14%;
+        margin: 0 15%;
     }
     .sign-in {
+        max-width: 80%;
+        margin: 80px 200px;
+    }
+    .sign-up {
         max-width: 80%;
         margin: 80px 200px;
     }
@@ -197,10 +228,16 @@
         font-size: 15px;
     }
     .admin-box {
-        margin-left: 250px;
+        margin-left: 150px;
+    }
+    .admin-box {
+        width: 500px;
     }
     .member-box {
-        margin-left: 250px;
+        width: 500px;
+    }
+    .member-box {
+        margin-left: 150px;
     }
     .back2 {
         width: 120px;
@@ -221,6 +258,12 @@
     #upload-btn3 {
         margin: 20px 100px;
     }
+    .section1 {
+        margin: 80px 250px;
+    }
+    .section2 {
+        margin: 80px 250px;
+    }
 }
 
 @media(max-width:850px) {
@@ -231,13 +274,16 @@
 
 @media(max-width:800px) {
     .fade-menu-li li {
-        margin: 0 13%;
+        margin: 0 14%;
     }
     .menu-time2 {
         margin: 70px 50px;
     }
     .res-menu {
         right: -300px;
+    }
+    .slide-box {
+        height: 400px;
     }
     #username {
         margin: 50px 30px;
@@ -271,10 +317,10 @@
         margin-top: 300px;
     }
     .admin-box {
-        margin-left: 220px;
+        margin-left: 150px;
     }
     .member-box {
-        margin-left: 220px;
+        margin-left: 150px;
     }
     .back2 {
         width: 100px;
@@ -291,6 +337,14 @@
     }
     .login-title {
         margin: 30px 280px;
+    }
+    .section1 {
+        max-width: 50%;
+        margin: 80px 200px;
+    }
+    .section2 {
+        max-width: 50%;
+        margin: 80px 200px;
     }
 }
 
@@ -331,6 +385,9 @@
     .sign-in {
         margin: 80px 150px;
     }
+    .sign-up {
+        margin: 80px 150px;
+    }
     .adminadd {
         margin: 80px 150px;
     }
@@ -359,10 +416,10 @@
         font-size: 12px;
     }
     .admin-box {
-        margin-left: 180px;
+        margin-left: 100px;
     }
     .member-box {
-        margin-left: 180px;
+        margin-left: 100px;
     }
     .back2 {
         margin-right: 280px;
@@ -377,6 +434,14 @@
         max-width: 90%;
         width: 200px;
     }
+    .section1 {
+        max-width: 50%;
+        margin: 80px 150px;
+    }
+    .section2 {
+        max-width: 50%;
+        margin: 80px 150px;
+    }
 }
 
 @media(max-width:650px) {
@@ -386,6 +451,12 @@
 }
 
 @media(max-width:600px) {
+    .main-back {
+        height: 400px;
+    }
+    .main-pic {
+        height: 400px;
+    }
     .fade-menu img {
         width: 50%;
         margin-left: 100px;
@@ -395,6 +466,9 @@
     }
     .menu-time2 {
         margin: 60px 40px;
+    }
+    .slide-box {
+        height: 300px;
     }
     #back {
         margin-left: 20px;
@@ -437,10 +511,12 @@
         margin-top: 250px;
     }
     .admin-box {
-        margin-left: 120px;
+        margin-left: 40px;
+        width: 450px;
     }
     .member-box {
-        margin-left: 120px;
+        width: 450px;
+        margin-left: 40px;
     }
     .back2 {
         margin-right: 240px;
@@ -456,6 +532,20 @@
     }
     .login-title {
         margin: 30px 200px;
+    }
+    .adminedit {
+        max-width: 50%;
+    }
+    .memberedit {
+        max-width: 50%;
+    }
+    .section1 {
+        max-width: 50%;
+        margin: 80px 120px;
+    }
+    .section2 {
+        max-width: 50%;
+        margin: 80px 120px;
     }
 }
 
@@ -478,7 +568,7 @@
         margin-left: 100px;
     }
     .fade-menu-li li {
-        margin: 0 5%;
+        margin: 0 8%;
         font-size: 14px;
     }
     .p {
@@ -494,6 +584,9 @@
         height: 1000px;
     }
     .sign-in {
+        margin: 80px 100px;
+    }
+    .sign-up {
         margin: 80px 100px;
     }
     .adminadd {
@@ -521,13 +614,29 @@
         margin-top: 380px;
     }
     .admin-box {
-        margin-left: 60px;
+        margin-left: 30px;
+        width: 400px;
     }
     .member-box {
-        margin-left: 60px;
+        margin-left: 30px;
+        width: 400px;
     }
     .back2 {
         margin-right: 200px;
+    }
+    .adminedit {
+        max-width: 60%;
+    }
+    .memberedit {
+        max-width: 60%;
+    }
+    .section1 {
+        max-width: 60%;
+        margin: 80px 100px;
+    }
+    .section2 {
+        max-width: 60%;
+        margin: 80px 100px;
     }
 }
 
@@ -549,6 +658,9 @@
         font-size: 15px;
     }
     .sign-in {
+        margin: 80px 40px;
+    }
+    .sign-up {
         margin: 80px 40px;
     }
     .adminadd {

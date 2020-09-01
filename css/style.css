@@ -2,6 +2,13 @@
     margin: 0;
 }
 
+.main {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
 
 /* main page */
 
@@ -169,11 +176,11 @@ body:hover li {
     width: 300px;
     height: 500px;
     background: rgba(100, 88, 88, 0.774);
-    position: relative;
+    position: absolute;
     float: right;
     z-index: 5;
     border-radius: 0 0 0 8px;
-    right: -300px;
+    right: -500px;
     display: none;
 }
 
@@ -244,12 +251,12 @@ body:hover li {
     max-width: 160px;
     position: relative;
     text-align: center;
-    margin: 0 18%;
+    margin: 0 17%;
     cursor: pointer;
 }
 
 .fade-menu-li a:hover {
-    color: green;
+    color: rgb(9, 238, 9);
 }
 
 .fade-menu img {
@@ -261,7 +268,7 @@ body:hover li {
 }
 
 .fade-txt {
-    color: red;
+    color: rgb(202, 235, 19);
     position: relative;
     max-width: 1200px;
     min-height: 100px;
@@ -277,7 +284,7 @@ body:hover li {
 }
 
 .select {
-    color: green;
+    color: rgb(207, 241, 12);
 }
 
 a {
@@ -349,9 +356,6 @@ a {
 
 .menu-time {
     margin-top: 50px;
-    width: 100%;
-    height: 1500px;
-    background: rgba(37, 37, 37, 0.178);
 }
 
 .menu-time2 {
@@ -370,7 +374,7 @@ a {
     max-width: 90%;
     width: 500px;
     height: 300px;
-    opacity: 0.5;
+    opacity: 0.7;
     border-radius: 5px;
 }
 
@@ -503,16 +507,8 @@ body:hover .menu-time img {
     margin: 100px 100px;
 }
 
-
-/* .prof img {
-    max-width: 300px;
-    height: 300px;
-    border-radius: 200px;
-    margin: 100px 100px;
-} */
-
 .h2 {
-    color: purple;
+    color: rgb(123, 52, 255);
     margin: 30px 500px;
 }
 
@@ -524,7 +520,7 @@ body:hover .menu-time img {
 
 .panel-bar li {
     margin: 4%;
-    color: rgba(14, 124, 119, 0.76);
+    color: blue;
 }
 
 .panel-bar li:hover {
@@ -546,7 +542,7 @@ body:hover .menu-time img {
     float: right;
     margin-right: 30px;
     margin-top: -70px;
-    color: orange;
+    color: rgb(255, 0, 0);
 }
 
 .out li:hover {
@@ -726,7 +722,7 @@ body:hover .menu-time img {
 
 .edit-title {
     width: 150px;
-    color: rgb(23, 139, 110);
+    color: rgb(0, 0, 0);
     margin: auto;
     padding: 10px;
 }
@@ -738,7 +734,7 @@ body:hover .menu-time img {
 }
 
 .tbl-menu legend {
-    color: red;
+    color: black;
     margin: 2% 8%;
 }
 
@@ -746,9 +742,10 @@ body:hover .menu-time img {
     max-width: 90%;
     width: 1000px;
     text-align: center;
-    background: lightgreen;
+    background: rgb(15, 228, 210);
     border-radius: 5px;
     margin: auto;
+    color: blue;
 }
 
 .tbl-main-pic {
@@ -758,7 +755,7 @@ body:hover .menu-time img {
 }
 
 .tbl-main-pic legend {
-    color: red;
+    color: black;
     margin: 2% 8%;
 }
 
@@ -766,9 +763,10 @@ body:hover .menu-time img {
     max-width: 90%;
     width: 1000px;
     text-align: center;
-    background: lightgreen;
+    background: rgb(15, 228, 210);
     border-radius: 5px;
     margin: auto;
+    color: blue;
 }
 
 .tbl-fademenu-1 {
@@ -778,7 +776,7 @@ body:hover .menu-time img {
 }
 
 .tbl-fademenu-1 legend {
-    color: red;
+    color: black;
     margin: 2% 8%;
 }
 
@@ -786,9 +784,10 @@ body:hover .menu-time img {
     max-width: 90%;
     width: 1000px;
     text-align: center;
-    background: lightgreen;
+    background: rgb(15, 228, 210);
     border-radius: 5px;
     margin: auto;
+    color: blue;
 }
 
 .tbl-fademenu-2 {
@@ -798,7 +797,7 @@ body:hover .menu-time img {
 }
 
 .tbl-fademenu-2 legend {
-    color: red;
+    color: black;
     margin: 2% 8%;
 }
 
@@ -806,9 +805,10 @@ body:hover .menu-time img {
     max-width: 90%;
     width: 1000px;
     text-align: center;
-    background: lightgreen;
+    background: rgb(15, 228, 210);
     border-radius: 5px;
     margin: auto;
+    color: blue;
 }
 
 .tbl-slider {
@@ -818,7 +818,7 @@ body:hover .menu-time img {
 }
 
 .tbl-slider legend {
-    color: red;
+    color: black;
     margin: 2% 8%;
 }
 
@@ -826,9 +826,10 @@ body:hover .menu-time img {
     max-width: 90%;
     width: 1000px;
     text-align: center;
-    background: lightgreen;
+    background: rgb(15, 228, 210);
     border-radius: 5px;
     margin: auto;
+    color: blue;
 }
 
 .tbl-menu-time {
@@ -838,7 +839,7 @@ body:hover .menu-time img {
 }
 
 .tbl-menu-time legend {
-    color: red;
+    color: black;
     margin: 2% 8%;
 }
 
@@ -846,24 +847,26 @@ body:hover .menu-time img {
     max-width: 90%;
     width: 1000px;
     text-align: center;
-    background: lightgreen;
+    background: rgb(15, 228, 210);
     border-radius: 5px;
     margin: auto;
+    color: blue;
 }
 
 fieldset {
     padding: 10px;
     margin: 50px;
     border-radius: 5px;
-    border-color: green;
+    border-color: rgb(77, 211, 77);
 }
 
 fieldset input {
     max-width: 50%;
     width: 500px;
     height: 50px;
-    border-radius: 1px;
     font-size: 18px;
+    background: rgb(130, 235, 235);
+    border-color: rgb(238, 8, 27);
 }
 
 #edit-main-pic {
@@ -874,7 +877,7 @@ fieldset input {
 #title-ok {
     width: 100px;
     border-radius: 5px;
-    background: yellow;
+    background: rgb(27, 223, 27);
     margin: auto 100px;
     cursor: pointer;
 }
@@ -882,7 +885,7 @@ fieldset input {
 #upload-btn {
     width: 100px;
     border-radius: 5px;
-    background: yellow;
+    background: rgb(27, 223, 27);
     margin: auto 100px;
     cursor: pointer;
 }
@@ -890,7 +893,7 @@ fieldset input {
 #upload-btn2 {
     width: 100px;
     border-radius: 5px;
-    background: yellow;
+    background: rgb(27, 223, 27);
     margin: auto 100px;
     cursor: pointer;
 }
@@ -898,7 +901,7 @@ fieldset input {
 #upload-btn3 {
     width: 100px;
     border-radius: 5px;
-    background: yellow;
+    background: rgb(27, 223, 27);
     margin: auto 100px;
     cursor: pointer;
 }
@@ -907,7 +910,7 @@ fieldset input {
 #fade-menu-ok2 {
     width: 200px;
     border-radius: 5px;
-    background: yellow;
+    background: rgb(27, 223, 27);
     margin: auto 50px;
     cursor: pointer;
 }
@@ -915,7 +918,7 @@ fieldset input {
 #send-photo {
     width: 200px;
     border-radius: 5px;
-    background: yellow;
+    background: rgb(27, 223, 27);
     margin: auto 50px;
     cursor: pointer;
 }
@@ -924,7 +927,7 @@ fieldset input {
 #fade-pic2 {
     width: 200px;
     border-radius: 5px;
-    background: yellow;
+    background: rgb(27, 223, 27);
     margin: auto 50px;
     cursor: pointer;
 }
@@ -932,7 +935,7 @@ fieldset input {
 #send-photo3 {
     width: 200px;
     border-radius: 5px;
-    background: yellow;
+    background: rgb(27, 223, 27);
     margin: auto 50px;
     cursor: pointer;
 }
@@ -940,6 +943,7 @@ fieldset input {
 .edit-back {
     float: right;
     margin: 0 50px;
+    color: rgb(0, 255, 21);
 }
 
 
@@ -956,6 +960,11 @@ fieldset input {
     background: rgba(40, 4, 124, 0.733);
     margin: 80px 400px;
     border-radius: 8px;
+}
+
+.haveacount {
+    margin: -5% 5%;
+    color: yellow;
 }
 
 .logout-btn {

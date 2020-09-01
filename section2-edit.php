@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/fontawesome-all.css">
 </head>
 
-<body>
+<body style="background:lightpink">
 
     <div class="section2-title">
         <h2>EDIT FADE MENU SECTION 2</h2>

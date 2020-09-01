@@ -7,7 +7,7 @@
     <?php require "backend.php"; ?>
 </head>
 
-<body>
+<body style="background:lightpink">
     <div class="login-title">
         <h2>SIGN UP</h2>
     </div>
@@ -19,7 +19,7 @@
             <a href="main.php"><input type="button" id="back" value="HOME"></a>
             <input type="submit" id="enter" value="sign up" name="signup">
         </form>
-        <a href="login.php" class="acount">have got an acount?</a>
+        <a href="login.php" class="acount"><p class="haveacount">have got an acount?</p></a>
     </div>
 </body>
 

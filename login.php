@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/fontawesome-all.css">
 </haed>
 
-<body>
+<body style="background:lightpink">
 
     <div class="login-title">
         <h2>SIGN IN</h2>

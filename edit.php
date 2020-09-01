@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="responsive.css">
 </head>
-<?php include "backend.php"; ?>
+<?php
+include "backend.php";
+?>
 
-<body>
+<body style="background:rgb(168, 78, 228)">
+    <!-- <img src="img/back9.png" class="main"> -->
     <h2 class="edit-title">EDIT PAGE</h2>
     <a href="panel.php">
         <h2 class="edit-back">panel</h2>

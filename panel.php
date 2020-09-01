@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="responsive.css">
 </head>
 
-<body>
+<body style="background:lightpink">
     <h2 class="h2">wellcome dear <?php echo $_SESSION["adminname"]; ?></h2>
     <a href="main.php?adminout" class="out">
         <ul>
